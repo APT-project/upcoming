@@ -65,7 +65,7 @@ html(lang='en')
 
 
     div.bottom(layout='row', layout-align='center')
-        div.phone-frame.md-whiteframe-z2(ng-style='{"width": (vm.rotated ? vm.devices[vm.deviceIndex].height : vm.devices[vm.deviceIndex].width) +"px" , "height": (vm.rotated ? vm.devices[vm.deviceIndex].width : vm.devices[vm.deviceIndex].height) + "px" }')
+        div.phone-frame.md-whiteframe-z2(ng-style='{"width": (vm.rotated ? vm.devices[vm.deviceIndex].height : vm.devices[vm.deviceIndex].width) +"px" , "height": (vm.rotated ? vm.devices[vm.deviceIndex].width : vm.devices[vm.deviceIndex].height) + "px" }' layout='column')
             md-toolbar.md-whiteframe-z2
                 .md-toolbar-tools
                     md-button.md-icon-button(ng-click="vm.fullscreen = false" aria-label="Menu")
@@ -77,9 +77,10 @@ html(lang='en')
                     md-button.md-icon-button
                         md-icon(ng-md-icon, icon='feedback')
                         md-tooltip Feedback Button (Disabled)
-            div.frame-container(ng-style='{"height": vm.fullscreen? "100%":vm.tile_height+"px"}' flex)
-                iframe.md-whiteframe-z2.app-frame(id="app" src="app" width="100%" height="100%")
-                div.frame-event-hijacker(ng-click="vm.fullscreen = true" ng-hide='vm.fullscreen')
+            div(flex)
+                div.frame-container(ng-style='{"height": vm.fullscreen? "100%":vm.tile_height+"px"}' )
+                    iframe.md-whiteframe-z2.app-frame(id="app" src="app" width="100%" height="100%" style='position:absolute')
+                    div.frame-event-hijacker(ng-click="vm.fullscreen = true" ng-hide='vm.fullscreen')
 
 
     script(src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.js")
