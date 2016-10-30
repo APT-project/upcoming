@@ -80,7 +80,7 @@
       </div>
     </div>
     <div layout="row" layout-align="center" class="bottom">
-      <div ng-style="{&quot;width&quot;: (vm.rotated ? vm.devices[vm.deviceIndex].height : vm.devices[vm.deviceIndex].width) +&quot;px&quot; , &quot;height&quot;: (vm.rotated ? vm.devices[vm.deviceIndex].width : vm.devices[vm.deviceIndex].height) + &quot;px&quot; }" class="phone-frame md-whiteframe-z2">
+      <div ng-style="{&quot;width&quot;: (vm.rotated ? vm.devices[vm.deviceIndex].height : vm.devices[vm.deviceIndex].width) +&quot;px&quot; , &quot;height&quot;: (vm.rotated ? vm.devices[vm.deviceIndex].width : vm.devices[vm.deviceIndex].height) + &quot;px&quot; }" layout="column" class="phone-frame md-whiteframe-z2">
         <md-toolbar class="md-whiteframe-z2">
           <div class="md-toolbar-tools">
             <md-button ng-click="vm.fullscreen = false" aria-label="Menu" class="md-icon-button">
@@ -94,9 +94,11 @@
             </md-button>
           </div>
         </md-toolbar>
-        <div ng-style="{&quot;height&quot;: vm.fullscreen? &quot;100%&quot;:vm.tile_height+&quot;px&quot;}" flex class="frame-container">
-          <iframe id="app" src="app" width="100%" height="100%" class="md-whiteframe-z2 app-frame"></iframe>
-          <div ng-click="vm.fullscreen = true" ng-hide="vm.fullscreen" class="frame-event-hijacker"></div>
+        <div flex>
+          <div ng-style="{&quot;height&quot;: vm.fullscreen? &quot;100%&quot;:vm.tile_height+&quot;px&quot;}" class="frame-container">
+            <iframe id="app" src="app" width="100%" height="100%" style="position:absolute" class="md-whiteframe-z2 app-frame"></iframe>
+            <div ng-click="vm.fullscreen = true" ng-hide="vm.fullscreen" class="frame-event-hijacker"></div>
+          </div>
         </div>
       </div>
     </div>

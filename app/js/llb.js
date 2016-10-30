@@ -24,8 +24,21 @@ llb_app.removeListener = function(type, callback)
 		{
 			llb_app.listeners[type].splice(llb_app.listeners[type].indexOf(callback),1)
 		}
-
 	}
+}
+
+
+llb_app.request = function(event_type, data_to_send)
+{
+	data = {}
+	data['type'] = event_type
+	
+	if(data_to_send != undefined)
+	{
+		data['data'] = data_to_send	
+	}
+
+	parent.postMessage(JSON.stringify(data) , '*')
 }
 
 window.addEventListener('message', function(event){
