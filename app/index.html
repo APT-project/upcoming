@@ -1,31 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
+
 <head>
-	<title></title>
-	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-	<script type="text/javascript" src="js/llb.js"></script>
-	<script type="text/javascript" src="js/app.js"></script>
+  <title>Upcoming Stops</title>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.js"></script>
+  <script type="text/javascript" src="js/llb.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript" src="js/controllers/maincontroller.js"></script>
+  <script type="text/javascript" src="js/services/livebus.js"></script>
 </head>
-<body style='background-color: #26C6DA'>
-	<div id="test_window_state"></div>
-	<div id="test_location"></div>
 
-	<script type="text/javascript">
+<body style='background-color: #666666' ng-app="upcomingStops">
 
-		llb_app.addListener('window_state', function(data){
-			if(data.fullscreen)
-			{
-				document.getElementById("test_window_state").innerHTML = 'This is fullscreen'
-			}
-			else
-			{
-				document.getElementById("test_window_state").innerHTML = 'This is just a tile'
-			}
-		})
+  <div ng-controller="MainController">
+    <h1>Upcoming Stops</h1>
+  </div>
 
-		llb_app.addListener('location', function(data){
-			document.getElementById("test_location").innerHTML = "Location data : " + JSON.stringify(data)
-		})
-	</script>
 </body>
+
 </html>
