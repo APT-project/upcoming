@@ -1,0 +1,24 @@
+html, body, iframe {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  background-color: #FFFFFF;
+}
+
+.tile {
+  background-color: #FFCA28;
+  border: 1px solid #000;
+  text-align: center;
+  text-overflow: ellipsis;
+}
+
+.this-does-not-work {
+  background-color: #FFCA28;
+  border: 1px solid #000;
+  text-overflow: ellipsis;
+  text-decoration: none;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  }
+}

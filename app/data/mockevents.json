@@ -1,0 +1,52 @@
+[
+  {
+    "id": 0,
+    "name": "Bowling discount",
+    "venue": "",
+    "description": "",
+    "longitude": 66.616,
+    "latitude": 66.616,
+    "busstops": ["1337", "8888"],
+    "priority": 0
+  },
+  {
+    "id": 1,
+    "name": "Free buckets",
+    "venue": "Hämeensilta",
+    "description": "Buy a Tesla, get one bucket for free",
+    "latitude": 66.666,
+    "longitude": 66.666,
+    "busstops": ["4311", "0800", "8135"],
+    "priority": 0
+  },
+  {
+    "id": 2,
+    "name": "Burger Tuesday",
+    "venue": "Zarillo",
+    "description": "Burgers 1% off if you wash the dishes",
+    "latitude": 66.661,
+    "longitude": 66.661,
+    "busstops": ["1984", "2001", "2112"],
+    "priority": 0
+  },
+  {
+    "id": 3,
+    "name": "Coffee tasting",
+    "venue": "Pispalan Haulitehdas",
+    "description": "We have Euroshopper and Rainbow coffee",
+    "latitude": 66.919,
+    "longitude": 66.919,
+    "busstops": [],
+    "priority": 0
+  },
+  {
+    "id": 4,
+    "name": "Maitreya is coming",
+    "venue": "",
+    "description": "real soon now",
+    "latitude": 66.911,
+    "longitude": 66.911,
+    "busstops": ["9001"],
+    "priority": 0
+  }
+]
