@@ -1,3 +1,5 @@
+'use strict';
+
 upcoming.factory('eventsFactory', ['$http', function($http) {
 
   let getEvents = function() {
