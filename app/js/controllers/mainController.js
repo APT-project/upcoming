@@ -1,3 +1,5 @@
+'use strict';
+
 upcoming.controller('mainController', ['$scope', 'eventsFactory', function($scope, eventsFactory) {
 
   eventsFactory.getEvents().then(function success(response) {

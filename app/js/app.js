@@ -1,3 +1,5 @@
+'use strict';
+
 let upcoming = angular.module('upcomingStops', ['ngMaterial']);
 
 upcoming.run(['$rootScope', function($rootScope) {

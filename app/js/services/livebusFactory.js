@@ -1,3 +1,5 @@
+'use strict';
+
 upcoming.factory('livebusFactory', ['$http', function($http) {
 
   let getLiveBus = function() {
