@@ -1,7 +1,9 @@
 (function() {
   'use strict';
 
-  upcoming.factory('eventFactory', eventFactory);
+  angular
+    .module('upcomingStops')
+    .factory('eventFactory', eventFactory);
 
   eventFactory.$inject = ['$http'];
 

@@ -1,7 +1,9 @@
 (function() {
   'use strict';
 
-  upcoming.factory('livebusFactory', livebusFactory);
+  angular
+    .module('upcomingStops')
+    .factory('livebusFactory', livebusFactory);
 
   livebusFactory.$inject = ['$http'];
 

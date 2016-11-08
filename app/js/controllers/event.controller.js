@@ -1,7 +1,9 @@
 (function() {
   'use strict';
 
-  upcoming.controller('EventController', EventController);
+  angular
+    .module('upcomingStops')
+    .controller('EventController', EventController);
 
   EventController.$inject = ['eventFactory'];
 
