@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  upcoming.controller('MainController', ['$scope', 'eventsFactory', function($scope, eventsFactory) {
+  upcoming.controller('EventController', ['$scope', 'eventsFactory', function($scope, eventsFactory) {
 
     eventsFactory.getEvents().then(function success(response) {
       $scope.events = response.data;
