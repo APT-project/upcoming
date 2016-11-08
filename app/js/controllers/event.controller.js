@@ -1,7 +1,11 @@
 (function() {
   'use strict';
 
-  upcoming.controller('EventController', ['$scope', 'eventFactory', function($scope, eventFactory) {
+  upcoming.controller('EventController', EventController);
+
+  EventController.$inject = ['eventFactory'];
+
+  function EventController(eventFactory) {
 
     let vm = this;
 
@@ -11,5 +15,5 @@
       console.log(response.status + response.statusText);
     });
 
-  }]);
+  };
 })();
