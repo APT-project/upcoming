@@ -1,8 +1,11 @@
 'use strict';
 
-let upcoming = angular.module('upcomingStops', ['ngMaterial']);
+angular
+  .module('upcomingStops', ['ngMaterial']);
 
-upcoming.run(['$rootScope', function($rootScope) {
+angular
+  .module('upcomingStops')
+  .run(['$rootScope', function($rootScope) {
 
   $rootScope.fullscreen = false;
   $rootScope.initialized = false;
