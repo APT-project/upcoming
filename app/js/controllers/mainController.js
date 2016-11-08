@@ -1,11 +1,13 @@
-'use strict';
+(function() {
+  'use strict';
 
-upcoming.controller('mainController', ['$scope', 'eventsFactory', function($scope, eventsFactory) {
+  upcoming.controller('mainController', ['$scope', 'eventsFactory', function($scope, eventsFactory) {
 
-  eventsFactory.getEvents().then(function success(response) {
-    $scope.events = response.data;
-  }, function error(response) {
-    console.log(response.status + response.statusText);
-  });
+    eventsFactory.getEvents().then(function success(response) {
+      $scope.events = response.data;
+    }, function error(response) {
+      console.log(response.status + response.statusText);
+    });
 
-}]);
+  }]);
+})();
