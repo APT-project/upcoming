@@ -4,7 +4,7 @@
   upcoming.factory('livebusFactory', ['$http', function($http) {
 
     let getLiveBus = function() {
-      return $http.get('data/mocklivebus.json');
+      return $http.get('data/mock.livebus.json');
     };
 
     return {
