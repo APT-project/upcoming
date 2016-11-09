@@ -14,26 +14,26 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.min.js"></script>
 
   <script type="text/javascript" src="js/llb.js"></script>
-  <script type="text/javascript" src="js/app.js"></script>
-  <script type="text/javascript" src="js/controllers/mainController.js"></script>
-  <script type="text/javascript" src="js/services/eventsFactory.js"></script>
-  <script type="text/javascript" src="js/services/livebusFactory.js"></script>
+  <script type="text/javascript" src="js/app.module.js"></script>
+  <script type="text/javascript" src="js/controllers/event.controller.js"></script>
+  <script type="text/javascript" src="js/services/event.factory.js"></script>
+  <script type="text/javascript" src="js/services/livebus.factory.js"></script>
 
 </head>
 
 <body ng-app="upcomingStops" ng-if='$root.initialized' layout="column">
 
-  <div ng-controller="mainController as vm" layout-fill>
+  <div ng-controller="EventController as ec" layout-fill>
 
     <md-content ng-if=!$root.fullscreen layout="row" layout-fill>
-      <md-card ng-repeat="event in events | limitTo:3" class="tile" flex layout-fill layout-align="center center">
+      <md-card ng-repeat="event in ec.events | limitTo:3" class="tile" flex layout-fill layout-align="center center">
         <span>{{ event.name }}</span>
         <span ng-if="event.venue">@{{ event.venue }}</span>
       </md-card>
     </md-content>
 
     <md-content ng-if=$root.fullscreen layout="column" layout-fill>
-      <md-button ng-repeat="event in events" flex layout-fill class="this-does-not-work" style="#however in-line style does?; background-color: #FFCA28; border: 1px solid #000; text-overflow: ellipsis;">
+      <md-button ng-repeat="event in ec.events" flex layout-fill class="this-does-not-work" style="#however in-line style does?; background-color: #FFCA28; border: 1px solid #000; text-overflow: ellipsis;">
         <span>{{ event.name }}</span>
         <span ng-if="event.venue">@{{ event.venue }}</span>
         <p ng-if="event.description">{{ event.description }}</p>
