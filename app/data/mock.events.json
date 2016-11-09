@@ -4,8 +4,8 @@
     "name": "Bowling discount",
     "venue": "",
     "description": "",
-    "longitude": 66.616,
-    "latitude": 66.616,
+    "latitude": "61.494413",
+    "longitude": "23.762998",
     "busstops": ["1337", "8888"],
     "priority": 0
   },
@@ -14,8 +14,8 @@
     "name": "Free buckets",
     "venue": "Hämeensilta",
     "description": "Buy a Tesla, get one bucket for free",
-    "latitude": 66.666,
-    "longitude": 66.666,
+    "latitude": "61.498002",
+    "longitude": "23.763586",
     "busstops": ["4311", "0800", "8135"],
     "priority": 0
   },
@@ -24,8 +24,8 @@
     "name": "Burger Tuesday",
     "venue": "Zarillo",
     "description": "Burgers 1% off if you wash the dishes",
-    "latitude": 66.661,
-    "longitude": 66.661,
+    "latitude": "61.496705",
+    "longitude": "23.7708255",
     "busstops": ["1984", "2001", "2112"],
     "priority": 0
   },
@@ -34,8 +34,8 @@
     "name": "Coffee tasting",
     "venue": "Pispalan Haulitehdas",
     "description": "We have Euroshopper and Rainbow coffee",
-    "latitude": 66.919,
-    "longitude": 66.919,
+    "latitude": "61.505228",
+    "longitude": "23.711523",
     "busstops": [],
     "priority": 0
   },
@@ -44,8 +44,8 @@
     "name": "Maitreya is coming",
     "venue": "",
     "description": "real soon now",
-    "latitude": 66.911,
-    "longitude": 66.911,
+    "latitude": "61.499089",
+    "longitude": "23.778980",
     "busstops": ["9001"],
     "priority": 0
   }
