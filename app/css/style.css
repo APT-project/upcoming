@@ -5,20 +5,64 @@ html, body, iframe {
   background-color: #FFFFFF;
 }
 
-.tile {
+md-card[md-ink-ripple] {
+  position: relative;
+}
+
+.event-tile {
   background-color: #FFCA28;
   border: 1px solid #000;
   text-align: center;
   text-overflow: ellipsis;
 }
 
-.this-does-not-work {
+.event-list {
   background-color: #FFCA28;
   border: 1px solid #000;
+  height: 150px;
   text-overflow: ellipsis;
-  text-decoration: none;
-  position: relative;
-  height: 100%;
-  width: 100%;
-  }
+  padding: 1%;
+}
+
+.event-map-bottom-button {
+  background-color: #FFCA28 !important;
+  position: fixed !important;
+  bottom: 0% !important;
+  left: 0% !important;
+  width: 100% !important;
+  margin: 0 !important;
+  alignment: center !important;
+}
+
+.event-bottom-sheet {
+  background-color: #FFCA28;
+  text-overflow: ellipsis;
+}
+
+.event-list-button {
+  background-color: #FFCA28 !important;
+  position: absolute !important;
+  top: 10px;
+}
+
+.event-title {
+  font-weight: bold;
+}
+
+.disable-text-selection {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#map {
+  /* This image is just a temporary hack for demonstration purposes until real map is implemented */
+  background-image: url('../img/map.jpg');
+  background-position: center center;"
+  background-size: cover;
+}
+
 }
