@@ -9,7 +9,7 @@
 
   function eventFactory($http) {
 
-    let getEvents = function() {
+    var getEvents = function() {
       return $http.get('data/mock.events.json');
     };
 
