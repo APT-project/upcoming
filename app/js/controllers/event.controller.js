@@ -8,7 +8,7 @@
   EventController.$inject = ['eventFactory', '$mdSidenav', '$mdBottomSheet'];
 
   function EventController(eventFactory, $mdSidenav, $mdBottomSheet) {
-    let vm = this;
+    var vm = this;
 
     vm.events = [];
     vm.selectedEvent = null;

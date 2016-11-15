@@ -9,7 +9,7 @@
 
   function livebusFactory($http) {
 
-    let getLiveBus = function() {
+    var getLiveBus = function() {
       return $http.get('data/mock.livebus.json');
     };
 
