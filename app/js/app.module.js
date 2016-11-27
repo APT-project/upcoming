@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('upcomingStops', ['ngMaterial']);
+    .module('upcomingStops', ['ngMaterial', 'upcomingStops.event', 'upcomingStops.livebus']);
 
   angular
     .module('upcomingStops')
