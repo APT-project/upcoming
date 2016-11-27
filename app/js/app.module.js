@@ -14,14 +14,14 @@
       llb_app.addListener('window_state', function(data){
         if(data.fullscreen) {
           $rootScope.$apply(function() {
-            $rootScope.fullscreen = true
-          })
+            $rootScope.fullscreen = true;
+          });
         } else {
           $rootScope.$apply(function() {
             $mdBottomSheet.cancel();
-            $rootScope.fullscreen = false
+            $rootScope.fullscreen = false;
             $rootScope.$broadcast("changed_window_state");
-          })
+          });
         }
       });
 
@@ -29,9 +29,9 @@
 
       llb_app.addListener('window_dimensions', function(data) {
         $rootScope.$apply(function() {
-          $rootScope.window_dimensions = data
+          $rootScope.window_dimensions = data;
           $rootScope.initialized = true;
-        })
+        });
       });
     }]);
 })();
