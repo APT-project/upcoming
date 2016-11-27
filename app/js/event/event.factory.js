@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('upcomingStops')
+    .module('upcomingStops.event')
     .factory('eventFactory', eventFactory);
 
   eventFactory.$inject = ['$http'];

@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('upcomingStops')
+    .module('upcomingStops.livebus')
     .factory('livebusFactory', livebusFactory);
 
   livebusFactory.$inject = ['$http'];

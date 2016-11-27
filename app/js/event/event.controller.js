@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('upcomingStops')
+    .module('upcomingStops.event')
     .controller('EventController', EventController);
 
   EventController.$inject = ['eventFactory', '$mdSidenav', '$mdBottomSheet'];
