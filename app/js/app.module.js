@@ -6,7 +6,7 @@
 
   angular
     .module('upcomingStops')
-    .run(['$rootScope', function($rootScope) {
+    .run(['$rootScope', '$mdBottomSheet', function($rootScope, $mdBottomSheet) {
 
       $rootScope.fullscreen = false;
       $rootScope.initialized = false;
@@ -18,6 +18,7 @@
           })
         } else {
           $rootScope.$apply(function() {
+            $mdBottomSheet.cancel();
             $rootScope.fullscreen = false
             $rootScope.$broadcast("changed_window_state");
           })
