@@ -82,8 +82,8 @@
     //small hack to ensure that map redraws after being (re)hidden by ng-if
     //needs to wait a bit for some reason, probably the event is fired
     //just a bit too early? Even 1ms timeout worked, added a bit more to be safe
-    $scope.$on('changed_window_state', forceRedraw);
-    function forceRedraw() {
+    llb_app.addListener('window_state', forceRedraw);
+    function forceRedraw(data) {
       if (vm.map !== null) {
         setTimeout(function(){
           vm.map.forceRedraw();

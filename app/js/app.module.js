@@ -20,8 +20,6 @@
             $rootScope.fullscreen = false;
           });
         }
-
-        $rootScope.$broadcast("changed_window_state");
       });
 
       llb_app.request('window_dimensions');
