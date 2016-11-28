@@ -2,10 +2,8 @@
   'use strict';
 
   angular
-    .module('upcomingStops', ['ngMaterial', 'upcomingStops.event', 'upcomingStops.livebus']);
-
-  angular
-    .module('upcomingStops')
+    .module('upcomingStops', ['ngMaterial', 'upcomingStops.event', 'upcomingStops.livebus', 'upcomingStops.map'])
+    .config(['LoadGoogleMapsApiProvider', configureApp])
     .run(['$rootScope', '$mdBottomSheet', function($rootScope, $mdBottomSheet) {
 
       $rootScope.fullscreen = false;
@@ -20,9 +18,10 @@
           $rootScope.$apply(function() {
             $mdBottomSheet.cancel();
             $rootScope.fullscreen = false;
-            $rootScope.$broadcast("changed_window_state");
           });
         }
+
+        $rootScope.$broadcast("changed_window_state");
       });
 
       llb_app.request('window_dimensions');
@@ -34,4 +33,10 @@
         });
       });
     }]);
+
+    function configureApp(LoadGoogleMapsApiProvider) {
+      LoadGoogleMapsApiProvider.setConfig({
+        apiKey: 'GET_YOUR_OWN_API_KEY'
+      });
+    }
 })();
