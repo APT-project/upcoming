@@ -23,11 +23,11 @@
         loadDeferred = $q.defer();
 
         function loadGMapsScript() {
-          if (myConfig.baseUrl == null) {
+          if (myConfig.baseUrl === null) {
             console.log('No Google Maps API URL defined, check Angular config!');
             loadDeferred.reject('No Google Maps API URL');
           }
-          else if (myConfig.apiKey == null) {
+          else if (myConfig.apiKey === null) {
             console.log('No Google Maps API Key defined, check Angular config!');
             loadDeferred.reject('No Google Maps API Key');
           }

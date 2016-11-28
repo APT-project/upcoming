@@ -47,7 +47,7 @@
     }
 
     function showUserPosMarker() {
-      if (vm.map !== null && vm.latestLocation != null) {
+      if (vm.map !== null && vm.latestLocation !== null) {
         if (vm.userPosMarker === null) {
           initUserPositionMarker(vm.map, vm.latestLocation);
         }
@@ -57,7 +57,7 @@
     }
 
     function centerToUser() {
-      if (vm.map !== null && vm.latestLocation != null) {
+      if (vm.map !== null && vm.latestLocation !== null) {
         vm.map.setZoom(15);
         vm.map.panTo(vm.latestLocation);
       }
