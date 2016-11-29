@@ -59,10 +59,5 @@ md-card[md-ink-ripple] {
 }
 
 #map {
-  /* This image is just a temporary hack for demonstration purposes until real map is implemented */
-  background-image: url('../img/map.jpg');
-  background-position: center center;"
-  background-size: cover;
-}
 
 }
