@@ -34,7 +34,7 @@
 
     function configureApp(GoogleMapsApiProvider) {
       GoogleMapsApiProvider.setConfig({
-        apiKey: 'GET_YOUR_OWN_API_KEY'
+        apiKey: 'AIzaSyBevZCT08ZBaZV6t4ZF_sBKncJg7kecZ94'
       });
     }
 })();
