@@ -3,7 +3,7 @@
 
   angular
     .module('upcomingStops', ['ngMaterial', 'upcomingStops.event', 'upcomingStops.livebus', 'upcomingStops.map'])
-    .config(['LoadGoogleMapsApiProvider', configureApp])
+    .config(['GoogleMapsApiProvider', configureApp])
     .run(['$rootScope', '$mdBottomSheet', function($rootScope, $mdBottomSheet) {
 
       $rootScope.fullscreen = false;
@@ -32,8 +32,8 @@
       });
     }]);
 
-    function configureApp(LoadGoogleMapsApiProvider) {
-      LoadGoogleMapsApiProvider.setConfig({
+    function configureApp(GoogleMapsApiProvider) {
+      GoogleMapsApiProvider.setConfig({
         apiKey: 'GET_YOUR_OWN_API_KEY'
       });
     }
