@@ -14,9 +14,8 @@
       angular.extend(myConfig, config);
     }
 
-    var loadDeferred = null;
     this.$get = function($window, $document, $q) {
-      loadDeferred = $q.defer();
+      var loadDeferred = $q.defer();
 
       function loadGMapsScript() {
         if (myConfig.baseUrl === null) {
