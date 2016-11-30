@@ -55,7 +55,8 @@
       <md-content ng-cloak flex id="map">
         <apt-map ng-style='{"width": "100%", "height": "100%"}'></apt-map>
         <md-button class="md-icon-button md-raised md-hue-2 event-list-button" hide-gt-sm ng-click="ec.toggleEventList()" aria-label='Open Event List'>
-            <md-icon md-svg-icon="img/icons/menu.svg" ></md-icon>
+          <!--<md-icon md-svg-icon="img/icons/menu.svg" ></md-icon>-->
+          <img class="png-icon" src="img/icons/menu.png" style="width: 24px; height: 24px;">
         </md-button>
         <md-button ng-if="ec.selectedEvent" class="md-icon-button" ng-click="ec.openBottomSheet(ec.selectedEvent)" aria-label='hack' style="background-color: transparent; position: fixed; top: 50%; left: 50%; alignment: center;">
           <md-icon md-svg-icon="img/icons/marker.svg" ></md-icon>
