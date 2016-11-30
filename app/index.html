@@ -58,9 +58,6 @@
           <!--<md-icon md-svg-icon="img/icons/menu.svg" ></md-icon>-->
           <img class="png-icon" src="img/icons/menu.png" style="width: 24px; height: 24px;">
         </md-button>
-        <md-button ng-if="ec.selectedEvent" class="md-icon-button" ng-click="ec.openBottomSheet(ec.selectedEvent)" aria-label='hack' style="background-color: transparent; position: fixed; top: 50%; left: 50%; alignment: center;">
-          <md-icon md-svg-icon="img/icons/marker.svg" ></md-icon>
-        </md-button>
 
         <md-button class="event-map-bottom-button" ng-if="ec.selectedEvent" class="" ng-click="ec.openBottomSheet(ec.selectedEvent)">
           {{ ec.selectedEvent.name }}
