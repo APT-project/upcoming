@@ -3,11 +3,11 @@
 
   angular
     .module('upcomingStops.event')
-    .factory('eventFilter', eventFilter);
+    .factory('eventSort', eventSort);
 
-  eventFilter.$inject = ['$http'];
+  eventSort.$inject = ['$http'];
 
-  // function eventFilter($http) {
+  // function eventSort($http) {
   //
   //     var getEvents = function() {
   //         return $http.get('data/mock.events.json');
