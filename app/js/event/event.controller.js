@@ -5,9 +5,9 @@
     .module('upcomingStops.event')
     .controller('EventController', EventController);
 
-  EventController.$inject = ['eventFactory', '$mdSidenav', '$mdBottomSheet'];
+  EventController.$inject = ['eventFactory', 'eventSort', '$mdSidenav', '$mdBottomSheet'];
 
-  function EventController(eventFactory, $mdSidenav, $mdBottomSheet) {
+  function EventController(eventFactory, eventSort, $mdSidenav, $mdBottomSheet) {
     var vm = this;
 
     vm.events = [];
@@ -44,6 +44,11 @@
       function error(response) {
         console.log(response.status + response.statusText);
       });
+
+    var userCoordinates = {lat: 61.498180, lng: 23.762195 };
+    eventSort
+      .proximity(userCoordinates, vm.events);
+
   };
 
 })();
