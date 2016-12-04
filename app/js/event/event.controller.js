@@ -59,9 +59,6 @@
         console.log(response.status + response.statusText);
       });
 
-/*    eventSort
-      .proximity(vm.latestLocation, vm.events);*/
-
   };
 
 })();
