@@ -37,8 +37,7 @@
     });
     llb_app.request('location');
 
-    var proximity = function(userCoordinates, $http) {
-      var events = $http.get('data/mock.events.json')
+    var proximity = function(userCoordinates, events) {
       for(var i = 0; i < events.length; i++) {
         // distance_list.push(events[i].name + " " + getDistanceFromLatLonInKm(Number(events[i].latitude), Number(events[i].longitude), Number(userCoordinates.latitude), Number(userCoordinates.longtitude)));
         events[i].disanceToUser = getDistanceFromLatLonInKm(Number(events[i].latitude), Number(events[i].longitude), Number(vm.latestLocation.latitude), Number(vm.latestLocation.longtitude));
