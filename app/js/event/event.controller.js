@@ -40,12 +40,15 @@
       .getEvents()
       .then(function success(response) {
         vm.events = response.data;
+        // For test
+        console.log(vm.events);
       },
       function error(response) {
         console.log(response.status + response.statusText);
       });
 
-    var userCoordinates = {lat: 61.498180, lng: 23.762195 };
+    // change lat to latitude adn lon to longitude
+    var userCoordinates = {latitude: 61.498180, longitude: 23.762195 };
     eventSort
       .proximity(userCoordinates, vm.events);
 
