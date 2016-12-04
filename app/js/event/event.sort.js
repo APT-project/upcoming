@@ -7,7 +7,7 @@
 
   eventSort.$inject = ['$http'];
 
-  function eventSort($http) {
+  function eventSort() {
 
     var vm = this;
 
@@ -39,8 +39,8 @@
 
     var proximity = function(userCoordinates, events) {
       for(var i = 0; i < events.length; i++) {
-        // distance_list.push(events[i].name + " " + getDistanceFromLatLonInKm(Number(events[i].latitude), Number(events[i].longitude), Number(userCoordinates.latitude), Number(userCoordinates.longtitude)));
-        events[i].disanceToUser = getDistanceFromLatLonInKm(Number(events[i].latitude), Number(events[i].longitude), Number(vm.latestLocation.latitude), Number(vm.latestLocation.longtitude));
+        //change longtitude to longitude
+        events[i].distanceToUser = getDistanceFromLatLonInKm(Number(events[i].latitude), Number(events[i].longitude), Number(userCoordinates.latitude), Number(userCoordinates.longitude));
       }
       console.log(events);
     };
