@@ -12,6 +12,8 @@
 
     vm.events = [];
     vm.selectedEvent = null;
+    vm.latestLocation = { latitude: 61.498180, longitude: 23.762195 };
+
     vm.selectEvent = selectEvent;
     vm.toggleEventList = toggleEventList;
     vm.openBottomSheet = openBottomSheet;
@@ -36,6 +38,18 @@
       });
     }
 
+    llb_app.request('location');
+    llb_app.addListener('location', function(data){
+      var coordinates = {
+        latitude: data.data.latitude,
+        longitude: data.data.longitude
+      };
+      vm.latestLocation = coordinates;
+
+      eventSort
+        .proximity(vm.latestLocation, vm.events);
+    });
+
     eventFactory
       .getEvents()
       .then(function success(response) {
@@ -45,9 +59,8 @@
         console.log(response.status + response.statusText);
       });
 
-    var userCoordinates = {lat: 61.498180, lng: 23.762195 };
-    eventSort
-      .proximity(userCoordinates, vm.events);
+/*    eventSort
+      .proximity(vm.latestLocation, vm.events);*/
 
   };
 
