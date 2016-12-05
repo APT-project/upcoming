@@ -50,8 +50,8 @@
             <span>{{ event.name }}</span>
             <span ng-if="event.venue">@{{ event.venue }}</span>
           </span>
-          <p ng-if="event.description">{{ event.description }}</p>
-          <p ng-if="event.distanceToUser" class="distance">{{ event.distanceToUser | distanceFormat}} km</p>
+          <p ng-if="event.description" class="description">{{ event.description }}</p>
+          <p ng-if="event.distanceToUser" class="distance description">{{ event.distanceToUser | distanceFormat}} km</p>
         </md-card>
       </md-sidenav>
 
