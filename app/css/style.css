@@ -7,8 +7,6 @@ html, body, iframe {
 
 md-card[md-ink-ripple] {
   position: relative;
-  /*width:100%;*/
-  /*overflow-y: auto;*/
 }
 
 .description {
