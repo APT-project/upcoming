@@ -12,7 +12,7 @@
     return function(x) {
       var distance;
       if(isNaN(x)){
-        return;
+        return x;
       } else {
         distance = x.toFixed(2);
         return distance;
