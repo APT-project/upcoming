@@ -32,7 +32,7 @@
           getDistanceFromLatLonInKm(Number(events[i].latitude),
                                     Number(events[i].longitude),
                                     Number(coordinates.latitude),
-                                    Number(coordinates.longitude));
+                                    Number(coordinates.longitude)).toFixed(2);
       }
     };
 
