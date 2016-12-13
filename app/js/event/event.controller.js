@@ -53,7 +53,7 @@
     eventFactory
       .getEvents()
       .then(function success(response) {
-        vm.events = response.data;
+          vm.events = response.data;
       },
       function error(response) {
         console.log(response.status + response.statusText);

@@ -36,6 +36,29 @@
 
   <div ng-controller="EventController as ec" layout-fill>
 
+    <!--<md-content ng-if=!$root.fullscreen layout="row" flex="50" layout-fill>-->
+      <!--<md-card ng-cloak class="event-tile " layout-fill layout-align="center center">-->
+        <!--<span class="md-headline">Upcoming Stops</span>-->
+      <!--</md-card>-->
+    <!--</md-content>-->
+
+    <!--<md-content ng-if=!$root.fullscreen layout="row" layout-fill>-->
+      <!--<md-content layout="column" flex="70">-->
+      <!--<md-card  ng-repeat="event in vm.events | orderBy : 'distanceToUser' | limitTo:3" ng-cloak class="event-tile" layout-fill style="min-height: 33%;" layout-align="center center">-->
+        <!--<span>{{ event.name }}</span>-->
+        <!--<span ng-if="event.venue">@{{ event.venue }}</span>-->
+      <!--</md-card>-->
+      <!--</md-content>-->
+
+      <!--<md-content layout="row" flex="30">-->
+      <!--<md-card ng-cloak class="event-tile " layout-fill layout-align="center center">-->
+        <!--<span>Upcoming Stops</span>-->
+        <!--<span class="show-more">Show more</span>-->
+
+      <!--</md-card>-->
+      <!--</md-content>-->
+    <!--</md-content>-->
+
     <md-content ng-if=!$root.fullscreen layout="row" layout-fill>
       <md-card ng-repeat="event in ec.events | orderBy : 'distanceToUser' | limitTo:3" ng-cloak class="event-tile" flex layout-fill layout-align="center center">
         <span>{{ event.name }}</span>
@@ -44,8 +67,8 @@
     </md-content>
 
     <div ng-if=$root.fullscreen flex layout-fill layout="row">
-      <md-sidenav md-is-open="true" md-component-id="left" ng-click="ec.toggleEventList()" class="md-sidenav-left md-whiteframe-z3" layout="column">
-        <md-card ng-repeat="event in ec.events | orderBy : 'distanceToUser'" ng-cloak flex layout-fill md-ink-ripple ng-click="ec.selectEvent(event)" ng-class="{'selected' : event === event.selectedEvent }" class="event-list disable-text-selection">
+      <md-sidenav md-is-open="fasle" md-component-id="left" ng-click="ec.toggleEventList()" class="md-sidenav-left md-whiteframe-z3">
+        <md-card ng-repeat="event in ec.events | orderBy : 'distanceToUser'" ng-cloak flex md-ink-ripple ng-click="ec.selectEvent(event)" ng-class="{'selected' : event === event.selectedEvent }" class="event-list disable-text-selection">
           <span class="event-title">
             <span>{{ event.name }}</span>
             <span ng-if="event.venue">@{{ event.venue }}</span>
@@ -58,7 +81,7 @@
       <md-content ng-cloak flex id="map">
         <apt-map ng-style='{"width": "100%", "height": "100%"}'></apt-map>
         <md-button class="md-icon-button md-raised md-hue-2 event-list-button" hide-gt-sm ng-click="ec.toggleEventList()" aria-label='Open Event List'>
-          <!--<md-icon md-svg-icon="img/icons/menu.svg" ></md-icon>-->
+          <!--<md-icon md-svg-icon="img/iconsis/menu.svg" ></md-icon>-->
           <img class="png-icon" src="img/icons/menu.png" style="width: 24px; height: 24px;">
         </md-button>
 
@@ -66,7 +89,6 @@
           {{ ec.selectedEvent.name }}
         </md-button>
       </md-content>
-
     </div>
 
   </div>
