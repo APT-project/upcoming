@@ -9,19 +9,19 @@
 
   function distanceFormat() {
 
-    return function(x) {
+    return function(x, symbol) {
       var distance;
       if (isNaN(x)) {
         return x;
       }
       else if (x > 1) {
         distance = x.toFixed(2);
-        return distance + "km";
+        return distance + symbol;
       }
 
       else {
         distance = x.toFixed(2) * 1000;
-        return distance + "m";
+        return distance + symbol;
       }
     }
   };
