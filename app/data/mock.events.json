@@ -58,5 +58,15 @@
     "longitude": "23.775980",
     "busstops": ["2045"],
     "priority": 0
+  },
+  {
+    "id": 6,
+    "name": "Close to me",
+    "venue": "",
+    "description": "Come to see us.",
+    "latitude": "61.46653",
+    "longitude": "23.85600",
+    "busstops": ["2045"],
+    "priority": 0
   }
 ]

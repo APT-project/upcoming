@@ -11,13 +11,19 @@
 
     return function(x) {
       var distance;
-      if(isNaN(x)){
+      if (isNaN(x)) {
         return x;
-      } else {
-        distance = x.toFixed(2);
-        return distance;
       }
-    };
+      else if (x > 1) {
+        distance = x.toFixed(2);
+        return distance + "km";
+      }
+
+      else {
+        distance = x.toFixed(2) * 1000;
+        return distance + "m";
+      }
+    }
   };
 
 })();
