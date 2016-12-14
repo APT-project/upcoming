@@ -48,5 +48,15 @@
     "longitude": "23.778980",
     "busstops": ["9001"],
     "priority": 0
+  },
+  {
+    "id": 5,
+    "name": "Try",
+    "venue": "",
+    "description": "see you here",
+    "latitude": "61.497089",
+    "longitude": "23.775980",
+    "busstops": ["2045"],
+    "priority": 0
   }
 ]

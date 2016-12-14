@@ -21,6 +21,10 @@ md-card[md-ink-ripple] {
   text-align: right;
 }
 
+.show-more {
+  color:darkred;
+}
+
 .event-tile {
   background-color: #FFCA28;
   border: 1px solid #000;
@@ -31,9 +35,11 @@ md-card[md-ink-ripple] {
 .event-list {
   background-color: #FFCA28;
   border: 1px solid #000;
-  height: 150px;
+  height: 100px;
   text-overflow: ellipsis;
   padding: 1%;
+  margin: 0;
+  width:100%;
 }
 
 .event-map-bottom-button {
@@ -69,6 +75,7 @@ md-card[md-ink-ripple] {
   -ms-user-select: none;
   user-select: none;
 }
+
 
 #map {
 
