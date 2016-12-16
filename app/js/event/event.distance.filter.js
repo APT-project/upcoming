@@ -1,29 +1,60 @@
 (function() {
   'use strict';
 
-  angular
-    .module('upcomingStops.event')
-    .filter('distanceFormat', distanceFormat);
+  angular.module('upcomingStops.event')
+    .filter('distance', eventDistanceFilterFactory);
 
-  distanceFormat.$inject = [];
+  eventDistanceFilterFactory.$inject = [];
 
-  function distanceFormat() {
+  function eventDistanceFilterFactory() {
 
-    return function(x, symbol) {
-      var distance;
-      if (isNaN(x)) {
-        return x;
-      }
-      else if (x > 1) {
-        distance = x.toFixed(2);
-        return distance + symbol;
+    function distanceFilter(distance, fromUnit, toUnit) {
+      distance = Number(distance);
+      if (isNaN(distance) || distance < 0) {
+        console.log("Distance is not a positive number.");
+        return;
       }
 
-      else {
-        distance = x.toFixed(2) * 1000;
-        return distance + symbol;
+      var coef = {
+       'm': {
+         'm' : 1,
+         'km': 0.001
+        },
+       'km': {
+         'm' : 1000,
+         'km': 1
+        }
+      };
+
+      if (!(fromUnit in coef)) {
+        fromUnit = 'km';
       }
+      if (!(toUnit in coef)) {
+        toUnit = 'km';
+      }
+
+      distance *= coef[fromUnit][toUnit];
+
+      if (toUnit == 'm') {
+        distance = roundTo(5, distance);
+      } else {
+        distance = distance.toFixed(2);
+      }
+
+      return distance + toUnit;
     }
-  };
+
+    function roundTo(mod, number) {
+      var remainder = number % mod;
+      if (remainder >= 0 && remainder < mod/2 ) {
+        number -= remainder;
+      } else {
+        number += mod - remainder;
+      }
+      return number;
+    }
+
+    return distanceFilter;
+  }
 
 })();

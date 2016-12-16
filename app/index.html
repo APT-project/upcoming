@@ -54,7 +54,7 @@
             <span ng-if="event.venue">@{{ event.venue }}</span>
           </span>
           <p ng-if="event.description" class="description">{{ event.description }}</p>
-          <p ng-if="event.distanceToUser" class="distance description">{{ event.distanceToUser | distanceFormat : event.distanceToUser > 1 ? "km" : "m"}}</p>
+          <p ng-if="event.distanceToUser" class="distance description">{{ event.distanceToUser | distance : "km" : event.distanceToUser < 1 ? "m" : "km"}}</p>
         </md-card>
       </md-sidenav>
 
