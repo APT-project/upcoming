@@ -44,14 +44,8 @@
       return distance + toUnit;
     }
 
-    function roundTo(mod, number) {
-      var remainder = number % mod;
-      if (remainder >= 0 && remainder < mod/2 ) {
-        number -= remainder;
-      } else {
-        number += mod - remainder;
-      }
-      return number;
+    function roundTo(step, number) {
+      return Math.floor((number / step) + 0.5) * step;
     }
 
     return distanceFilter;
