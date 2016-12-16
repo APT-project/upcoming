@@ -19,7 +19,7 @@
   <script type="text/javascript" src="js/event/event.controller.js"></script>
   <script type="text/javascript" src="js/event/event.factory.js"></script>
   <script type="text/javascript" src="js/event/event.sort.js"></script>
-  <script type="text/javascript" src="js/event/event.filter.js"></script>
+  <script type="text/javascript" src="js/event/event.distance.filter.js"></script>
   <script type="text/javascript" src="js/livebus/livebus.module.js"></script>
   <script type="text/javascript" src="js/livebus/livebus.factory.js"></script>
 
@@ -54,7 +54,7 @@
             <span ng-if="event.venue">@{{ event.venue }}</span>
           </span>
           <p ng-if="event.description" class="description">{{ event.description }}</p>
-          <p ng-if="event.distanceToUser" class="distance description">{{ event.distanceToUser | distanceFormat : event.distanceToUser > 1 ? "km" : "m"}}</p>
+          <p ng-if="event.distanceToUser" class="distance description">{{ event.distanceToUser | distance : "km" : event.distanceToUser < 1 ? "m" : "km"}}</p>
         </md-card>
       </md-sidenav>
 
