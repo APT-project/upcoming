@@ -16,6 +16,7 @@
     vm.dragStartListener = null;
 
     vm.renderEventsOnMap = renderEventsOnMap;
+    vm.showEventDetails = showEventDetails;
     vm.selectEvent = selectEvent;
     vm.toggleEventList = toggleEventList;
     vm.openBottomSheet = openBottomSheet;
@@ -47,8 +48,21 @@
           icon: 'img/icons/marker.event.png'
         });
 
+        marker.addListener('click', showEventDetails(event, eventLoc, marker));
         vm.map.showMarker(marker);
       }
+    }
+
+    function showEventDetails(event, eventLoc, marker) {
+      return function() {
+        $scope.$apply(function(){
+          vm.selectedEvent = event;
+        });
+
+        vm.map.panTo(eventLoc);
+
+        openBottomSheet(event);
+        }
     }
 
     function selectEvent(event) {
