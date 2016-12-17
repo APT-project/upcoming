@@ -27,6 +27,7 @@
               setZoom: setZoom,
               fitBounds: fitBounds,
               getBounds: getBounds,
+              createLatLng: createLatLng,
               createMarker: createMarker,
               showMarker: showMarker,
               removeMarker: removeMarker,
@@ -56,6 +57,12 @@
 
             function getBounds() {
               return map.getBounds();
+            }
+
+            function createLatLng(latitude, longitude) {
+              var myLatLng = new google.maps.LatLng({lat: latitude,
+                                                     lng: longitude});
+              return myLatLng;
             }
 
             function createMarker(properties) {
