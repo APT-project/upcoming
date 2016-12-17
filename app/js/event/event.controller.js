@@ -13,7 +13,9 @@
     vm.events = [];
     vm.selectedEvent = null;
     vm.latestLocation = { latitude: 61.498180, longitude: 23.762195 };
+    vm.dragStartListener = null;
 
+    vm.renderEventsOnMap = renderEventsOnMap;
     vm.selectEvent = selectEvent;
     vm.toggleEventList = toggleEventList;
     vm.openBottomSheet = openBottomSheet;
@@ -32,6 +34,21 @@
           });
       });
       vm.map = map;
+    }
+
+    function renderEventsOnMap(events) {
+      for (var i = 0; i < events.length; ++i) {
+        var event = events[i];
+        var eventLoc = vm.map.createLatLng(Number(event.latitude),
+                                           Number(event.longitude));
+        var marker = vm.map.createMarker({
+          position: eventLoc,
+          title: event.name,
+          icon: 'img/icons/marker.event.png'
+        });
+
+        vm.map.showMarker(marker);
+      }
     }
 
     function selectEvent(event) {
@@ -63,6 +80,7 @@
       $scope.$apply(function (){
         vm.latestLocation = coordinates;
         eventSort.proximity(vm.latestLocation, vm.events);
+        vm.renderEventsOnMap(vm.events);
       });
     });
 
