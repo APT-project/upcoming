@@ -67,6 +67,9 @@
 
     function selectEvent(event) {
       vm.selectedEvent = event;
+      var eventLoc = vm.map.createLatLng(Number(event.latitude),
+                                         Number(event.longitude));
+      vm.map.panTo(eventLoc);
     }
 
     function toggleEventList() {
