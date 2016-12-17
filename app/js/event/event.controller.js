@@ -68,9 +68,8 @@
         });
 
         vm.map.panTo(eventLoc);
-
         openBottomSheet(event);
-        }
+      }
     }
 
     function selectEvent(event) {
