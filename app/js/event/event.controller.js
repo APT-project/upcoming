@@ -40,6 +40,7 @@
     function renderEventsOnMap(events) {
       for (var i = 0; i < events.length; ++i) {
         var event = events[i];
+        var previousEvent = events[i-1] || event;
         var eventLoc = vm.map.createLatLng(Number(event.latitude),
                                            Number(event.longitude));
         var marker = vm.map.createMarker({
@@ -50,6 +51,13 @@
 
         marker.addListener('click', showEventDetails(event, eventLoc, marker));
         vm.map.showMarker(marker);
+
+        if (event.distanceToUser < previousEvent.distanceToUser) {
+          var nearestEventLoc = eventLoc;
+        }
+      }
+      if (nearestEventLoc) {
+        vm.map.panTo(nearestEventLoc);
       }
     }
 
