@@ -18,6 +18,22 @@
     vm.toggleEventList = toggleEventList;
     vm.openBottomSheet = openBottomSheet;
 
+    $scope.$on('mapReady', onMapReady);
+
+    function onMapReady(e, map) {
+      e.preventDefault();
+      if (e.stopPropagation) {
+        e.stopPropagation();
+      }
+
+      vm.dragStartListener = map.addListener('dragstart', function() {
+          $scope.$apply(function() {
+            vm.selectedEvent = null;
+          });
+      });
+      vm.map = map;
+    }
+
     function selectEvent(event) {
       vm.selectedEvent = event;
     }
