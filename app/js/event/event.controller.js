@@ -35,6 +35,7 @@
           });
       });
       vm.map = map;
+      vm.renderEventsOnMap(vm.events);
     }
 
     function renderEventsOnMap(events) {
@@ -103,7 +104,6 @@
       $scope.$apply(function (){
         vm.latestLocation = coordinates;
         eventSort.proximity(vm.latestLocation, vm.events);
-        vm.renderEventsOnMap(vm.events);
       });
     });
 
