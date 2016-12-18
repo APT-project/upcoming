@@ -49,7 +49,7 @@
           icon: 'img/icons/marker.event.png'
         });
 
-        marker.addListener('click', showEventDetails(event, eventLoc, marker));
+        marker.addListener('click', showEventDetails(event, eventLoc));
         vm.map.showMarker(marker);
 
         if (event.distanceToUser < previousEvent.distanceToUser) {
@@ -61,7 +61,7 @@
       }
     }
 
-    function showEventDetails(event, eventLoc, marker) {
+    function showEventDetails(event, eventLoc) {
       return function() {
         $scope.$apply(function(){
           vm.selectedEvent = event;
