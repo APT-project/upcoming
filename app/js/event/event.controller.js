@@ -68,6 +68,7 @@
           vm.selectedEvent = event;
         });
 
+        vm.map.setZoom(15);
         vm.map.panTo(eventLoc);
         openBottomSheet(event);
       }
