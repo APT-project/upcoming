@@ -41,8 +41,8 @@
       for (var i = 0; i < events.length; ++i) {
         var event = events[i];
         var previousEvent = events[i-1] || event;
-        var eventLoc = vm.map.createLatLng(Number(event.latitude),
-                                           Number(event.longitude));
+        var eventLoc = { lat: Number(event.latitude),
+                         lng: Number(event.longitude) };
         var marker = vm.map.createMarker({
           position: eventLoc,
           title: event.name,
@@ -74,8 +74,7 @@
 
     function selectEvent(event) {
       vm.selectedEvent = event;
-      var eventLoc = vm.map.createLatLng(Number(event.latitude),
-                                         Number(event.longitude));
+      var eventLoc = { lat: Number(event.latitude), lng: Number(event.longitude) }
       vm.map.panTo(eventLoc);
     }
 
