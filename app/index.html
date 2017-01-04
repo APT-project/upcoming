@@ -43,7 +43,7 @@
       <md-card ng-repeat="event in ec.events | orderBy : 'distanceToUser' | limitTo:2" ng-cloak class="event-tile" flex layout-fill layout-align="center center">
         <span>{{ event.name }}</span>
         <span ng-if="event.venue">@{{ event.venue }}</span>
-        <p ng-if="event.distanceToUser" class="description">{{ event.distanceToUser | distanceFormat : event.distanceToUser > 1 ? "km" : "m"}}</p>
+        <p ng-if="event.distanceToUser" class="description">{{ event.distanceToUser | distance : "km" : event.distanceToUser < 1 ? "m" : "km"}}</p>
       </md-card>
     </md-content>
 
