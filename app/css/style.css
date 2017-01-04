@@ -30,6 +30,7 @@ md-card[md-ink-ripple] {
   border: 1px solid #000;
   text-align: center;
   text-overflow: ellipsis;
+  background-size: cover;
 }
 
 .event-tile span {

@@ -1,3 +1,4 @@
+(function() {
 'use strict';
 
 angular.module('shared.ucBackground', [])
@@ -6,8 +7,8 @@ angular.module('shared.ucBackground', [])
       attrs.$observe('ucBackground', function(value) {
         element.css({
           'background-image': 'url(' + value +')',
-          'background-size' : 'cover'
         });
       });
     };
   });
+})();
