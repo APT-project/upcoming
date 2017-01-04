@@ -2,9 +2,9 @@
   'use strict';
   angular.module('upcomingStops.map').controller('MapController', MapController);
 
-  MapController.$inject = ['$scope'];
+  MapController.$inject = ['$scope', 'isDemoMode'];
 
-  function MapController($scope) {
+  function MapController($scope, isDemoMode) {
     var vm = this;
     vm.map = null;
 

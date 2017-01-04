@@ -5,9 +5,9 @@
     .module('upcomingStops.event')
     .controller('EventController', EventController);
 
-  EventController.$inject = ['eventFactory', 'eventSort', '$mdSidenav', '$mdBottomSheet', '$scope'];
+  EventController.$inject = ['eventFactory', 'eventSort', '$mdSidenav', '$mdBottomSheet', '$scope', 'isDemoMode'];
 
-  function EventController(eventFactory, eventSort, $mdSidenav, $mdBottomSheet, $scope) {
+  function EventController(eventFactory, eventSort, $mdSidenav, $mdBottomSheet, $scope, isDemoMode) {
     var vm = this;
 
     vm.events = [];
