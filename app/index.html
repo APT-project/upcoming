@@ -54,7 +54,7 @@
 
     <div ng-if=$root.fullscreen flex layout-fill layout="row">
       <md-sidenav md-is-open="true" md-component-id="left" ng-click="ec.toggleEventList()" class="md-sidenav-left md-whiteframe-z3">
-        <md-card ng-repeat="event in ec.events | orderBy : 'distanceToUser'" ng-cloak flex md-ink-ripple ng-click="ec.selectEvent(event)" ng-class="{'selected' : event === event.selectedEvent }" class="event-list disable-text-selection" uc-background="http://abc.png">
+        <md-card ng-repeat="event in ec.events | orderBy : 'distanceToUser'" ng-cloak flex md-ink-ripple ng-click="ec.selectEvent(event)" ng-class="{'selected' : event === event.selectedEvent }" class="event-list disable-text-selection">
           <span class="event-title">
             <span>{{ event.name }}</span>
             <span ng-if="event.venue">@{{ event.venue }}</span>

@@ -37,6 +37,11 @@ md-card[md-ink-ripple] {
   background-color: rgba(255, 255, 255, 0.5);
   font-weight: 500;
 }
+.event-tile p {
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.5);
+  font-weight: 500;
+}
 
 .event-list {
   background-color: #FFCA28;
