@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('upcomingStops', ['ngMaterial', 'upcomingStops.event', 'upcomingStops.bus', 'upcomingStops.map'])
+    .module('upcomingStops', ['ngMaterial', 'upcomingStops.event', 'upcomingStops.bus', 'upcomingStops.map', 'upcomingStops.shared'])
     .config(['GoogleMapsApiProvider', configureApp])
     .value('isDemoMode', true)
     .run(['$rootScope', '$mdBottomSheet', function($rootScope, $mdBottomSheet) {

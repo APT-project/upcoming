@@ -27,6 +27,8 @@
   <script type="text/javascript" src="js/bus/bus.location.mocking.service.js"></script>
 
   <script type="text/javascript" src="js/shared/shared.module.js"></script>
+  <script type="text/javascript" src="js/shared/ucBackground/ucBackground.module.js"></script>
+  <script type="text/javascript" src="js/shared/ucBackground/ucBackground.directive.js"></script>
   <script type="text/javascript" src="js/shared/googleMapsApi.provider.js"></script>
 
   <script type="text/javascript" src="js/map/map.module.js"></script>
@@ -41,9 +43,9 @@
 
     <md-content ng-if=!$root.fullscreen layout="row" layout-fill>
       <md-card ng-cloak class="event-tile show-more" flex layout-fill layout-align="center center">
-        What's upcoming!
+        <span>Show What's Upcoming!</span>
       </md-card>
-      <md-card ng-repeat="event in ec.events | orderBy : 'distanceToUser' | limitTo:2" ng-cloak class="event-tile" flex layout-fill layout-align="center center">
+      <md-card ng-repeat="event in ec.events | orderBy : 'distanceToUser' | limitTo:2" ng-cloak class="event-tile" flex layout-fill layout-align="center center" uc-background="img/events/{{ event.id }}-medium.png">
         <span>{{ event.name }}</span>
         <span ng-if="event.venue">@{{ event.venue }}</span>
         <p ng-if="event.distanceToUser" class="description">{{ event.distanceToUser | distance : "km" : event.distanceToUser < 1 ? "m" : "km"}}</p>
@@ -52,7 +54,7 @@
 
     <div ng-if=$root.fullscreen flex layout-fill layout="row">
       <md-sidenav md-is-open="true" md-component-id="left" ng-click="ec.toggleEventList()" class="md-sidenav-left md-whiteframe-z3">
-        <md-card ng-repeat="event in ec.events | orderBy : 'distanceToUser'" ng-cloak flex md-ink-ripple ng-click="ec.selectEvent(event)" ng-class="{'selected' : event === event.selectedEvent }" class="event-list disable-text-selection">
+        <md-card ng-repeat="event in ec.events | orderBy : 'distanceToUser'" ng-cloak flex md-ink-ripple ng-click="ec.selectEvent(event)" ng-class="{'selected' : event === event.selectedEvent }" class="event-list disable-text-selection" uc-background="http://abc.png">
           <span class="event-title">
             <span>{{ event.name }}</span>
             <span ng-if="event.venue">@{{ event.venue }}</span>
