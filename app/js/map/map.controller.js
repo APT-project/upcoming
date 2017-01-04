@@ -29,9 +29,21 @@
     }
 
     function initUserPositionMarker(map, initPosition) {
+      var imageProperties = {
+        url: 'img/icons/bus.position.marker.png',
+        sizeX: 106,
+        sizeY: 122,
+        scaledX: 21,
+        scaledY: 24,
+        originX: 0,
+        originY: 0,
+        anchorX: 10,
+        anchorY: 18
+      };
+      var image = map.createMarkerImage(imageProperties);
       vm.userPosMarker = map.createMarker({
         position: initPosition,
-        icon: 'img/userpositionmarker.png'
+        icon: image
       });
       vm.userPosMarker.setClickable(false);
 
