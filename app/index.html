@@ -37,12 +37,13 @@
   <div ng-controller="EventController as ec" layout-fill>
 
     <md-content ng-if=!$root.fullscreen layout="row" layout-fill>
+      <md-card ng-cloak class="event-tile show-more" flex layout-fill layout-align="center center">
+        What's upcoming!
+      </md-card>
       <md-card ng-repeat="event in ec.events | orderBy : 'distanceToUser' | limitTo:2" ng-cloak class="event-tile" flex layout-fill layout-align="center center">
         <span>{{ event.name }}</span>
         <span ng-if="event.venue">@{{ event.venue }}</span>
-      </md-card>
-      <md-card ng-cloak class="event-tile show-more" flex layout-fill layout-align="center center">
-        Show more upcoming stops
+        <p ng-if="event.distanceToUser" class="description">{{ event.distanceToUser | distanceFormat : event.distanceToUser > 1 ? "km" : "m"}}</p>
       </md-card>
     </md-content>
 
