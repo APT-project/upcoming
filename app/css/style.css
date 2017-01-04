@@ -16,7 +16,7 @@ md-card[md-ink-ripple] {
 
 .distance {
   position: absolute;
-  right: 0;
+  right: 5px;
   bottom: 0;
   text-align: right;
 }
