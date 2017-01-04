@@ -63,6 +63,22 @@
       }
     }
 
+    function updateLocation(latLng) {
+      vm.latestLocation = latLng;
+      if (vm.showUserPosition) {
+        showUserPosMarker();
+      }
+      updateUserPosMarker();
+    }
+
+    $scope.$on('busLocation', function(e, busLocation) {
+      var latLng = {
+        lat: busLocation.latitude,
+        lng: busLocation.longitude
+      };
+      updateLocation(latLng);
+    });
+
     llb_app.addListener('location', function(data){
       var latLng = {
         lat: data.data.latitude,
