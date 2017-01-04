@@ -51,9 +51,9 @@
   },
   {
     "id": 5,
-    "name": "Try",
+    "name": "Siipiweikot",
     "venue": "",
-    "description": "see you here",
+    "description": "Hot wings",
     "latitude": "61.497089",
     "longitude": "23.775980",
     "busstops": ["2045"],
@@ -61,9 +61,9 @@
   },
   {
     "id": 6,
-    "name": "Close to me",
+    "name": "Flowpark",
     "venue": "",
-    "description": "Come to see us.",
+    "description": "Good place for entertainment.",
     "latitude": "61.46653",
     "longitude": "23.85600",
     "busstops": ["2045"],
