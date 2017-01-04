@@ -1,5 +1,5 @@
 (function() {
   'use strict';
 
-  angular.module('upcomingStops.shared', []);
+  angular.module('upcomingStops.shared', ['shared.ucBackground']);
 })();
