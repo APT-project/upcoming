@@ -21,7 +21,13 @@
     vm.toggleEventList = toggleEventList;
     vm.openBottomSheet = openBottomSheet;
 
+    $scope.$on('busLocation', updateEventDistances);
     $scope.$on('mapReady', onMapReady);
+
+    function updateEventDistances(e, location) {
+      vm.latestLocation = location;
+      eventSort.proximity(vm.latestLocation, vm.events);
+    }
 
     function onMapReady(e, map) {
       e.preventDefault();
