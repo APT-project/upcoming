@@ -3,6 +3,8 @@
 
   angular.module('upcomingStops.bus', [])
     .run(['$interval', 'busLocationMockingService', 'isDemoMode', function($interval, busLocationMockingService, isDemoMode) {
-      $interval(busLocationMockingService.runMockBus, 1000);
+      if (isDemoMode) {
+        $interval(busLocationMockingService.runMockBus, 1000);
+      }
     }]);
 })();

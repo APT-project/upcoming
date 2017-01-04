@@ -71,28 +71,23 @@
       updateUserPosMarker();
     }
 
-    $scope.$on('busLocation', function(e, busLocation) {
-      var latLng = {
-        lat: busLocation.latitude,
-        lng: busLocation.longitude
-      };
-      updateLocation(latLng);
-    });
-
-    llb_app.addListener('location', function(data){
-      var latLng = {
-        lat: data.data.latitude,
-        lng: data.data.longitude
-      };
-
-      vm.latestLocation = latLng;
-
-      if (vm.showUserPosition) {
-        showUserPosMarker();
-      }
-
-      updateUserPosMarker();
-    });
+    if (isDemoMode) {
+      $scope.$on('busLocation', function(e, busLocation) {
+        var latLng = {
+          lat: busLocation.latitude,
+          lng: busLocation.longitude
+        };
+        updateLocation(latLng);
+      });
+    } else {
+      llb_app.addListener('location', function(data){
+        var latLng = {
+          lat: data.data.latitude,
+          lng: data.data.longitude
+        };
+        updateLocation(latLng);
+      });
+    }
     llb_app.request('location');
 
     //small hack to ensure that map redraws after being (re)hidden by ng-if
