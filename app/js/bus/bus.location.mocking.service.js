@@ -5,9 +5,9 @@
     .module('upcomingStops.bus')
     .service('busLocationMockingService', BusLocationMockingService);
 
-    BusLocationMockingService.$inject = ['$rootScope', '$interval'];
+    BusLocationMockingService.$inject = ['$rootScope'];
 
-    function BusLocationMockingService($rootScope, $interval) {
+    function BusLocationMockingService($rootScope) {
       var service = this;
 
       var counter = 0;
