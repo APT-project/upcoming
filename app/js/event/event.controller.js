@@ -95,10 +95,9 @@
 
     function openBottomSheet(event) {
       $mdBottomSheet.show({
-        //template: '<md-bottom-sheet>{{bs.event.name}}</md-bottom-sheet>',
-        templateUrl: 'templates/event.bottomsheet.html',
+        templateUrl: 'js/event/event-details.template.html',
         /* Wish I could just pass the parameter 'event' to the controller instead of referencing EventController's scope here. Waiting for someone to show me how to do it. Until then using this way.*/
-        controller: function() {this.event = vm.selectedEvent},
+        controller: function($scope) {this.event = vm.selectedEvent},
         //controller: function(event) {this.event = event},
         controllerAs: 'bs',
         //locals: event
@@ -135,3 +134,6 @@
   };
 
 })();
+
+
+

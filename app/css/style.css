@@ -3,6 +3,7 @@ html, body, iframe {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   background-color: #FFFFFF;
+  text-shadow: 2px 0 6px rgba(255, 255, 255, 0.1);
 }
 
 md-card[md-ink-ripple] {
@@ -92,10 +93,37 @@ md-card[md-ink-ripple] {
   alignment: center !important;
 }
 
-.event-bottom-sheet {
-  background-color: #FFCA28;
-  text-overflow: ellipsis;
+.event-details-container {
+  position: absolute;
+  min-height: 50px;
+  height: 50%;
+  width: 100%;
+  margin-top: 10%;
+  z-index: 110;
+  background-color: #fff;
 }
+
+.event-details p,
+.event-details .event-title {
+  padding: 0 20px;
+  z-index: 111;
+}
+
+.event-details {
+  padding-top: 20px;
+  background-color: #fff;
+  text-overflow: ellipsis;
+  z-index: 110;
+  vertical-align: middle;
+  display: block;
+  height: 100%;
+}
+
+.event-detail-image {
+  height: 100%;
+  background-size: cover;
+}
+
 
 .event-list-button {
   background-color: #FFCA28 !important;
