@@ -60,14 +60,14 @@
     </md-content>
 
     <div ng-if=$root.fullscreen flex layout-fill layout="row" id="sidenav-container">
-      <md-sidenav md-is-open="true" md-component-id="left" ng-click="ec.toggleEventList()" id="sidenav" class="md-sidenav-left md-whiteframe-z3">
+      <md-sidenav md-is-open="false" md-component-id="left" ng-click="ec.toggleEventList()" id="sidenav" class="md-sidenav-left md-whiteframe-z3">
         <md-card ng-repeat="event in ec.events | orderBy : 'distanceToUser'" ng-cloak flex md-ink-ripple ng-click="ec.selectEvent(event)" ng-class="{'selected' : event === event.selectedEvent }" class="event-list disable-text-selection" uc-background="img/events/{{ event.id }}-medium.png">
           <div class="event-title">
             <div class="name">{{ event.name }}</div>
             <div class="venue" ng-if="event.venue">@{{ event.venue }}</div>
             <div ng-if="event.distanceToUser" class="distance description" ng-hide="smallEventDetails">{{ event.distanceToUser | distance : " km" : event.distanceToUser < 1 ? " m" : " km"}}</div>
           </div>
-          <p ng-if="event.description" class="description">{{ event.description }}</p>
+          <p ng-if="event.description" class="description">{{ event.description}}</p>
         </md-card>
       </md-sidenav>
 
