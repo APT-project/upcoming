@@ -3,8 +3,7 @@
 
   angular
     .module('upcomingStops',
-      [ 'ngRoute',
-        'ngMaterial',
+      [ 'ngMaterial',
         'ngAnimate',
         'upcomingStops.event',
         'upcomingStops.bus',
