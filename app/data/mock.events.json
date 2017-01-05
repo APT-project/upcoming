@@ -4,6 +4,7 @@
     "name": "Bowling Discount",
     "venue": "",
     "description": "Bowling is where it's at! There are free alleys for tonight.",
+    "category": "leisure",
     "latitude": "61.494413",
     "longitude": "23.762998",
     "busstops": ["1337", "8888"],
@@ -14,6 +15,7 @@
     "name": "Burger Tuesday",
     "venue": "Zarillo",
     "description": "The go-to place for students on Tuesdays!",
+    "category": "food",
     "latitude": "61.496705",
     "longitude": "23.7708255",
     "busstops": ["1984", "2001", "2112"],
@@ -24,6 +26,7 @@
     "name": "Coffee Tasting",
     "venue": "Pispalan Haulitehdas",
     "description": "Get a free coffee tasting tour!",
+    "category": "food",
     "latitude": "61.505228",
     "longitude": "23.711523",
     "busstops": [],
@@ -34,6 +37,7 @@
     "name": "Falafel for Two",
     "venue": "",
     "description": "Discover rich Middle Eastern tastes and get two meals for the price of one!",
+    "category": "food",
     "latitude": "61.499089",
     "longitude": "23.778980",
     "busstops": ["9001"],
@@ -44,6 +48,7 @@
     "name": "Mystery Room",
     "venue": "",
     "description": "Solve the riddle in the Mystery Room to get out in time! Available for groups up to 6 people",
+    "category": "leisure",
     "latitude": "61.497089",
     "longitude": "23.775980",
     "busstops": ["2045"],
@@ -54,6 +59,7 @@
     "name": "Free Museum Night",
     "venue": "",
     "description": "Visit all the museums in Tampere for free tonight!",
+    "category": "culture",
     "latitude": "61.46653",
     "longitude": "23.85600",
     "busstops": ["2045"],
@@ -64,6 +70,7 @@
     "name": "Art Gallery Open",
     "venue": "",
     "description": "A wide range of modern art for display at the gallery.",
+    "category": "culture",
     "latitude": "61.46653",
     "longitude": "23.85600",
     "busstops": ["2045"],
@@ -74,11 +81,10 @@
     "name": "Street Food Event",
     "venue": "",
     "description": "Tampere opens a street food event tonight!",
+    "category": "food",
     "latitude": "61.46653",
     "longitude": "23.85600",
     "busstops": ["2045"],
     "priority": 0
   }
-
-
 ]
