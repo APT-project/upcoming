@@ -2,9 +2,9 @@
   'use strict';
   angular.module('upcomingStops.map').controller('MapController', MapController);
 
-  MapController.$inject = ['$scope'];
+  MapController.$inject = ['$scope', 'isDemoMode'];
 
-  function MapController($scope) {
+  function MapController($scope, isDemoMode) {
     var vm = this;
     vm.map = null;
 
@@ -29,9 +29,21 @@
     }
 
     function initUserPositionMarker(map, initPosition) {
+      var imageProperties = {
+        url: 'img/icons/bus.position.marker.png',
+        sizeX: 106,
+        sizeY: 122,
+        scaledX: 21,
+        scaledY: 24,
+        originX: 0,
+        originY: 0,
+        anchorX: 10,
+        anchorY: 18
+      };
+      var image = map.createMarkerImage(imageProperties);
       vm.userPosMarker = map.createMarker({
         position: initPosition,
-        icon: 'img/userpositionmarker.png'
+        icon: image
       });
       vm.userPosMarker.setClickable(false);
 
@@ -63,20 +75,31 @@
       }
     }
 
-    llb_app.addListener('location', function(data){
-      var latLng = {
-        lat: data.data.latitude,
-        lng: data.data.longitude
-      };
-
+    function updateLocation(latLng) {
       vm.latestLocation = latLng;
-
       if (vm.showUserPosition) {
         showUserPosMarker();
       }
-
       updateUserPosMarker();
-    });
+    }
+
+    if (isDemoMode) {
+      $scope.$on('busLocation', function(e, busLocation) {
+        var latLng = {
+          lat: busLocation.latitude,
+          lng: busLocation.longitude
+        };
+        updateLocation(latLng);
+      });
+    } else {
+      llb_app.addListener('location', function(data){
+        var latLng = {
+          lat: data.data.latitude,
+          lng: data.data.longitude
+        };
+        updateLocation(latLng);
+      });
+    }
     llb_app.request('location');
 
     //small hack to ensure that map redraws after being (re)hidden by ng-if

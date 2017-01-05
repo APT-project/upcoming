@@ -5,9 +5,9 @@
     .module('upcomingStops.event')
     .controller('EventController', EventController);
 
-  EventController.$inject = ['eventFactory', 'eventSort', '$mdSidenav', '$mdBottomSheet', '$scope'];
+  EventController.$inject = ['eventFactory', 'eventSort', '$mdSidenav', '$mdBottomSheet', '$scope', 'isDemoMode'];
 
-  function EventController(eventFactory, eventSort, $mdSidenav, $mdBottomSheet, $scope) {
+  function EventController(eventFactory, eventSort, $mdSidenav, $mdBottomSheet, $scope, isDemoMode) {
     var vm = this;
 
     vm.events = [];
@@ -36,6 +36,11 @@
       });
       vm.map = map;
       vm.renderEventsOnMap(vm.events);
+    }
+
+    function updateEventDistances(e, location) {
+      vm.latestLocation = location;
+      eventSort.proximity(vm.latestLocation, vm.events);
     }
 
     function renderEventsOnMap(events) {
@@ -101,16 +106,22 @@
     }
 
     llb_app.request('location');
-    llb_app.addListener('location', function(data){
-      var coordinates = {
-        latitude: data.data.latitude,
-        longitude: data.data.longitude
-      };
-      $scope.$apply(function (){
-        vm.latestLocation = coordinates;
-        eventSort.proximity(vm.latestLocation, vm.events);
+
+    if (isDemoMode) {
+      $scope.$on('busLocation', updateEventDistances);
+    }
+    else {
+      llb_app.addListener('location', function(data){
+        var coordinates = {
+          latitude: data.data.latitude,
+          longitude: data.data.longitude
+        };
+        $scope.$apply(function (){
+          vm.latestLocation = coordinates;
+          eventSort.proximity(vm.latestLocation, vm.events);
+        });
       });
-    });
+    }
 
     eventFactory
       .getEvents()
