@@ -3,7 +3,7 @@
     "id": 0,
     "name": "Bowling Discount",
     "venue": "",
-    "description": "",
+    "description": "Bowling is where it's at! There are free alleys for tonight.",
     "latitude": "61.494413",
     "longitude": "23.762998",
     "busstops": ["1337", "8888"],

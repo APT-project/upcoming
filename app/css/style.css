@@ -94,17 +94,36 @@ md-card[md-ink-ripple] {
 }
 
 .event-details-container {
-  position: relative;
-  height: 100%;
+  position: absolute;
+  min-height: 50px;
+  height: 50%;
+  width: 100%;
+  margin-top: 10%;
+  z-index: 110;
+  background-color: #fff;
+}
+
+.event-details p,
+.event-details .event-title {
+  padding: 0 20px;
+  z-index: 111;
 }
 
 .event-details {
-  top: 50%;
+  padding-top: 20px;
   background-color: #fff;
   text-overflow: ellipsis;
-  z-index: 100;
+  z-index: 110;
   vertical-align: middle;
+  display: block;
+  height: 100%;
 }
+
+.event-detail-image {
+  height: 100%;
+  background-size: cover;
+}
+
 
 .event-list-button {
   background-color: #FFCA28 !important;
