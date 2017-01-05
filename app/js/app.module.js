@@ -2,8 +2,9 @@
   'use strict';
 
   angular
-    .module('upcomingStops', ['ngMaterial', 'upcomingStops.event', 'upcomingStops.livebus', 'upcomingStops.map'])
+    .module('upcomingStops', ['ngMaterial', 'upcomingStops.event', 'upcomingStops.bus', 'upcomingStops.map'])
     .config(['GoogleMapsApiProvider', configureApp])
+    .value('isDemoMode', true)
     .run(['$rootScope', '$mdBottomSheet', function($rootScope, $mdBottomSheet) {
 
       $rootScope.fullscreen = false;

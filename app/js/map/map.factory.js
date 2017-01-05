@@ -27,6 +27,7 @@
               setZoom: setZoom,
               fitBounds: fitBounds,
               getBounds: getBounds,
+              createMarkerImage: createMarkerImage,
               createMarker: createMarker,
               showMarker: showMarker,
               removeMarker: removeMarker,
@@ -56,6 +57,17 @@
 
             function getBounds() {
               return map.getBounds();
+            }
+
+            function createMarkerImage(img) {
+              var markerImage = new google.maps.MarkerImage(
+                img.url,
+                new google.maps.Size(img.sizeX, img.sizeY),
+                new google.maps.Point(img.originX, img.originY),
+                new google.maps.Point(img.anchorX, img.anchorY),
+                new google.maps.Size(img.scaledX, img.scaledY)
+              );
+              return markerImage;
             }
 
             function createMarker(properties) {
