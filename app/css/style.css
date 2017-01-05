@@ -37,7 +37,7 @@ md-card[md-ink-ripple] {
 .event-tile span {
   color: #000;
   background-color: rgba(255, 255, 255, 0.5);
-  font-weight: 500;
+  font-weight: 600;
 }
 .event-tile p {
   color: #000;
@@ -147,29 +147,47 @@ md-card[md-ink-ripple] {
 
 .event-list.ng-enter,
 .event-list.ng-leave,
-.event-list.ng-move {
+.event-list.ng-move,
+.event-details-container.ng-enter,
+.event-details-container.ng-leave,
+.event-details-container.ng-move,
+.event-detail-image.ng-enter {
   transition: 0.5s linear all;
 }
 
 .event-list.ng-enter,
-.event-list.ng-move {
+.event-list.ng-move,
+.event-details-container.ng-enter,
+.event-details-container.ng-move,
+.event-detail-image.ng-enter {
   height: 0;
   opacity: 0;
   overflow: hidden;
 }
 
 .event-list.ng-enter.ng-enter-active,
-.event-list.ng-move.ng-move-active {
+.event-list.ng-move.ng-move-active,
+.event-details-container.ng-enter.ng-enter-active,
+.event-details-container.ng-move.ng-move-active {
   height: 100px;
   opacity: 1;
 }
 
-.event-list.ng-leave {
+
+.ng-enter.ng-enter.ng-enter-active,
+.ng-enter.ng-move.ng-move-active {
+  height: 50%;
+  opacity: 1;
+}
+
+.event-list.ng-leave,
+.event-details-container.ng-leave {
   opacity: 1;
   overflow: hidden;
 }
 
-.event-list.ng-leave.ng-leave-active {
+.event-list.ng-leave.ng-leave-active,
+.event-details-container.ng-leave.ng-leave-active {
   height: 0;
   opacity: 0;
   padding-bottom: 0;
