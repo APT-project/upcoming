@@ -1,7 +1,7 @@
 [
   {
     "id": 0,
-    "name": "Bowling discount",
+    "name": "Bowling Discount",
     "venue": "",
     "description": "",
     "latitude": "61.494413",
@@ -10,20 +10,10 @@
     "priority": 0
   },
   {
-    "id": 1,
-    "name": "Free buckets",
-    "venue": "Hämeensilta",
-    "description": "Buy a Tesla, get one bucket for free",
-    "latitude": "61.498002",
-    "longitude": "23.763586",
-    "busstops": ["4311", "0800", "8135"],
-    "priority": 0
-  },
-  {
     "id": 2,
     "name": "Burger Tuesday",
     "venue": "Zarillo",
-    "description": "Burgers 1% off if you wash the dishes",
+    "description": "The go-to place for students on Tuesdays!",
     "latitude": "61.496705",
     "longitude": "23.7708255",
     "busstops": ["1984", "2001", "2112"],
@@ -31,9 +21,9 @@
   },
   {
     "id": 3,
-    "name": "Coffee tasting",
+    "name": "Coffee Tasting",
     "venue": "Pispalan Haulitehdas",
-    "description": "We have Euroshopper and Rainbow coffee",
+    "description": "Get a free coffee tasting tour!",
     "latitude": "61.505228",
     "longitude": "23.711523",
     "busstops": [],
@@ -41,9 +31,9 @@
   },
   {
     "id": 4,
-    "name": "Maitreya is coming",
+    "name": "Falafel for Two",
     "venue": "",
-    "description": "real soon now",
+    "description": "Discover rich Middle Eastern tastes and get two meals for the price of one!",
     "latitude": "61.499089",
     "longitude": "23.778980",
     "busstops": ["9001"],
@@ -51,9 +41,9 @@
   },
   {
     "id": 5,
-    "name": "Siipiweikot",
+    "name": "Mystery Room",
     "venue": "",
-    "description": "Hot wings",
+    "description": "Solve the riddle in the Mystery Room to get out in time! Available for groups up to 6 people",
     "latitude": "61.497089",
     "longitude": "23.775980",
     "busstops": ["2045"],
@@ -61,12 +51,34 @@
   },
   {
     "id": 6,
-    "name": "Flowpark",
+    "name": "Free Museum Night",
     "venue": "",
-    "description": "Good place for entertainment.",
+    "description": "Visit all the museums in Tampere for free tonight!",
+    "latitude": "61.46653",
+    "longitude": "23.85600",
+    "busstops": ["2045"],
+    "priority": 0
+  },
+  {
+    "id": 7,
+    "name": "Art Gallery Open",
+    "venue": "",
+    "description": "A wide range of modern art for display at the gallery.",
+    "latitude": "61.46653",
+    "longitude": "23.85600",
+    "busstops": ["2045"],
+    "priority": 0
+  },
+  {
+    "id": 8,
+    "name": "Street Food Event",
+    "venue": "",
+    "description": "Tampere opens a street food event tonight!",
     "latitude": "61.46653",
     "longitude": "23.85600",
     "busstops": ["2045"],
     "priority": 0
   }
+
+
 ]

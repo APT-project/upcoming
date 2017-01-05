@@ -26,20 +26,60 @@ md-card[md-ink-ripple] {
 }
 
 .event-tile {
-  background-color: #FFCA28;
+  background-color: #E91E63;
   border: 1px solid #000;
   text-align: center;
   text-overflow: ellipsis;
+  background-size: cover;
+}
+
+.event-tile span {
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.5);
+  font-weight: 500;
+}
+.event-tile p {
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.5);
+  font-weight: 500;
 }
 
 .event-list {
-  background-color: #FFCA28;
+  background-color: #E91E63;
+  background-size: contain;
+  background-repeat: no-repeat;
   border: 1px solid #000;
   height: 100px;
   text-overflow: ellipsis;
   padding: 1%;
+  padding-left: 110px;
   margin: 0;
   width:100%;
+}
+
+.event-list .venue {
+  clear: both;
+}
+
+.event-list .distance {
+  position: absolute;
+  float: right;
+  top: 4px;
+  font-weight: normal;
+  font-size: 12px;
+}
+
+.event-list .venue {
+  position: absolute;
+  float: right;
+  bottom: 0;
+  margin-left: -110px;
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.5);
+  font-weight: 500;
+  width: 94px;
+  text-align: center;
+  padding: 2px;
 }
 
 .event-map-bottom-button {
@@ -80,3 +120,6 @@ md-card[md-ink-ripple] {
 #map {
 
 }
+
+
+

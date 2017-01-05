@@ -2,7 +2,14 @@
   'use strict';
 
   angular
-    .module('upcomingStops', ['ngMaterial', 'upcomingStops.event', 'upcomingStops.bus', 'upcomingStops.map'])
+    .module('upcomingStops',
+      [ 'ngMaterial',
+        'ngAnimate',
+        'upcomingStops.event',
+        'upcomingStops.bus',
+        'upcomingStops.map',
+        'upcomingStops.shared'
+      ])
     .config(['GoogleMapsApiProvider', configureApp])
     .value('isDemoMode', true)
     .run(['$rootScope', '$mdBottomSheet', function($rootScope, $mdBottomSheet) {
@@ -29,9 +36,19 @@
         $rootScope.$apply(function() {
           $rootScope.window_dimensions = data;
           $rootScope.initialized = true;
+
+          // Hide some details (distance), from the left navigation event list, if
+          // the screen is small.
+          // This doesn't trigger when the view is chaged to portrait/landscape mode
+          if (data.fullscreen_width < 321) {
+            $rootScope.smallEventDetails = true;
+          } else {
+            $rootScope.smallEventDetails = false;
+          }
         });
       });
     }]);
+
 
     function configureApp(GoogleMapsApiProvider) {
       GoogleMapsApiProvider.setConfig({

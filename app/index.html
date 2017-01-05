@@ -1,17 +1,20 @@
 <!doctype html>
-<html>
+<html ng-app="upcomingStops">
 
 <head>
   <title>Upcoming Stops</title>
 
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+  <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.min.css">
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300">
+  <link rel='stylesheet' href='css/lib/perfect-scrollbar/perfect-scrollbar.min.css' />
 
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-animate.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-aria.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.min.js"></script>
+
+  <script type="text/javascript" src="js/lib/perfect-scrollbar/perfect-scrollbar.js"></script>
 
   <script type="text/javascript" src="js/llb.js"></script>
   <script type="text/javascript" src="js/app.module.js"></script>
@@ -27,38 +30,44 @@
   <script type="text/javascript" src="js/bus/bus.location.mocking.service.js"></script>
 
   <script type="text/javascript" src="js/shared/shared.module.js"></script>
+  <script type="text/javascript" src="js/shared/background/background.module.js"></script>
+  <script type="text/javascript" src="js/shared/background/background.directive.js"></script>
   <script type="text/javascript" src="js/shared/googleMapsApi.provider.js"></script>
 
   <script type="text/javascript" src="js/map/map.module.js"></script>
   <script type="text/javascript" src="js/map/map.controller.js"></script>
   <script type="text/javascript" src="js/map/map.factory.js"></script>
   <script type="text/javascript" src="js/map/map.directive.js"></script>
+
+  
+
+  <script type="text/javascript" src="js/lib/lib.js"></script>
 </head>
 
-<body ng-app="upcomingStops" ng-if='$root.initialized' layout="column">
+<body ng-if='$root.initialized' layout="column">
 
   <div ng-controller="EventController as ec" layout-fill>
 
     <md-content ng-if=!$root.fullscreen layout="row" layout-fill>
       <md-card ng-cloak class="event-tile show-more" flex layout-fill layout-align="center center">
-        What's upcoming!
+        <span>Show What's Upcoming!</span>
       </md-card>
-      <md-card ng-repeat="event in ec.events | orderBy : 'distanceToUser' | limitTo:2" ng-cloak class="event-tile" flex layout-fill layout-align="center center">
+      <md-card ng-repeat="event in ec.events | orderBy : 'distanceToUser' | limitTo:2" ng-cloak class="event-tile" flex layout-fill layout-align="center center" uc-background="img/events/{{ event.id }}-medium.png">
         <span>{{ event.name }}</span>
         <span ng-if="event.venue">@{{ event.venue }}</span>
         <p ng-if="event.distanceToUser" class="description">{{ event.distanceToUser | distance : "km" : event.distanceToUser < 1 ? "m" : "km"}}</p>
       </md-card>
     </md-content>
 
-    <div ng-if=$root.fullscreen flex layout-fill layout="row">
-      <md-sidenav md-is-open="true" md-component-id="left" ng-click="ec.toggleEventList()" class="md-sidenav-left md-whiteframe-z3">
-        <md-card ng-repeat="event in ec.events | orderBy : 'distanceToUser'" ng-cloak flex md-ink-ripple ng-click="ec.selectEvent(event)" ng-class="{'selected' : event === event.selectedEvent }" class="event-list disable-text-selection">
-          <span class="event-title">
-            <span>{{ event.name }}</span>
-            <span ng-if="event.venue">@{{ event.venue }}</span>
-          </span>
+    <div ng-if=$root.fullscreen flex layout-fill layout="row" id="sidenav-container">
+      <md-sidenav md-is-open="true" md-component-id="left" ng-click="ec.toggleEventList()" id="sidenav" class="md-sidenav-left md-whiteframe-z3">
+        <md-card ng-repeat="event in ec.events | orderBy : 'distanceToUser'" ng-cloak flex md-ink-ripple ng-click="ec.selectEvent(event)" ng-class="{'selected' : event === event.selectedEvent }" class="event-list disable-text-selection" uc-background="img/events/{{ event.id }}-medium.png">
+          <div class="event-title">
+            <div class="name">{{ event.name }}</div>
+            <div class="venue" ng-if="event.venue">@{{ event.venue }}</div>
+            <div ng-if="event.distanceToUser" class="distance description" ng-hide="smallEventDetails">{{ event.distanceToUser | distance : " km" : event.distanceToUser < 1 ? " m" : " km"}}</div>
+          </div>
           <p ng-if="event.description" class="description">{{ event.description }}</p>
-          <p ng-if="event.distanceToUser" class="distance description">{{ event.distanceToUser | distance : "km" : event.distanceToUser < 1 ? "m" : "km"}}</p>
         </md-card>
       </md-sidenav>
 
