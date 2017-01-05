@@ -82,6 +82,10 @@
 
     function toggleEventList() {
       $mdSidenav('left').toggle();
+
+      var container = document.getElementById('sidenav');
+      Ps.initialize(container);
+
     }
 
     function openBottomSheet(event) {
