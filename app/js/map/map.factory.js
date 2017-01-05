@@ -31,6 +31,7 @@
               createMarker: createMarker,
               showMarker: showMarker,
               removeMarker: removeMarker,
+              drawRoute: drawRoute,
               addListener: addListener,
               addListenerOnce: addListenerOnce,
               removeListener: removeListener,
@@ -82,6 +83,17 @@
             function removeMarker(marker) {
               marker.setMap(null);
             };
+
+            function drawRoute(routeCoordinates) {
+              var route = new google.maps.Polyline({
+                path: routeCoordinates,
+                geodesic: true,
+                strokeColor: '#0277BD',
+                strokeOpacity: 0.5,
+                strokeWeight: 4
+              });
+              route.setMap(map);
+            }
 
             function addListener(eventName, listener) {
               return map.addListener(eventName, listener);

@@ -21,6 +21,10 @@
       vm.map = map;
       initUserPositionMarker(vm.map, vm.latestLocation);
 
+      if (isDemoMode) {
+        initBusRoute(vm.map);
+      }
+
       $scope.$emit('mapReady', vm.map);
     }
 
@@ -81,6 +85,23 @@
         showUserPosMarker();
       }
       updateUserPosMarker();
+    }
+
+    function initBusRoute(map) {
+      var routeCoordinates = [
+        {lat: 61.498478, lng: 23.771710},
+        {lat: 61.498294, lng: 23.768578},
+        {lat: 61.498110, lng: 23.765874},
+        {lat: 61.498007, lng: 23.764844},
+        {lat: 61.496942, lng: 23.766904},
+        {lat: 61.497106, lng: 23.767376},
+        {lat: 61.497188, lng: 23.768835},
+        {lat: 61.497352, lng: 23.770466},
+        {lat: 61.496512, lng: 23.770680},
+        {lat: 61.496635, lng: 23.772440},
+        {lat: 61.498478, lng: 23.771710}
+      ];
+      map.drawRoute(routeCoordinates);
     }
 
     if (isDemoMode) {
