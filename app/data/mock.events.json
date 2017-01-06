@@ -1,7 +1,7 @@
 [
   {
     "id": 0,
-    "name": "Bowling 🎳 Discount",
+    "name": "Bowling Discount",
     "venue": "",
     "description": "Bowling is where it's at! There are free alleys for tonight.",
     "category": "leisure",
@@ -12,7 +12,7 @@
   },
   {
     "id": 2,
-    "name": "Burger 🍔 Tuesday",
+    "name": "Burger Tuesday",
     "venue": "Zarillo",
     "description": "The go-to place for students on Tuesdays!",
     "category": "food",
@@ -23,7 +23,7 @@
   },
   {
     "id": 3,
-    "name": "Coffee ☕ Tasting",
+    "name": "Coffee Tasting",
     "venue": "Pispalan Haulitehdas",
     "description": "Get a free coffee tasting tour!",
     "category": "food",
@@ -80,7 +80,7 @@
     "id": 8,
     "name": "Pop-up food event",
     "venue": "Xiaodong's Penthouse",
-    "description": "Free hot pot 🍜 and 白酒 🍻 for all!",
+    "description": "Free hot pot and 白酒 for all!",
     "category": "food",
     "latitude": "61.46653",
     "longitude": "23.85600",
@@ -91,7 +91,7 @@
     "id": 9,
     "name": "Matti Nykänen",
     "venue": "Kaijakka",
-    "description": "⛷🎸♫",
+    "description": "Rock concert and marriage counseling",
     "category": "entertainment",
     "latitude": "61.494612",
     "longitude": "23.759527",
@@ -100,7 +100,7 @@
   },
   {
     "id": 10,
-    "name": "Tauski Show 🎤",
+    "name": "Tauski Show",
     "venue": "Kyttis Pub",
     "description": "Tauski performs his hit song. Will he come or not, bets are on.",
     "category": "entertainment",
@@ -111,7 +111,7 @@
   },
   {
     "id": 11,
-    "name": "❄ Ice Skating ❄",
+    "name": "Ice Skating",
     "venue": "Keskustori",
     "description": "Welcome to our magnificent ice skating rink at the heart of Tampere!",
     "category": "sport",
@@ -133,7 +133,7 @@
   },
   {
     "id": 13,
-    "name": "Goat 🐐",
+    "name": "Goat",
     "venue": "",
     "description": "Come pet me!",
     "category": "leisure",
