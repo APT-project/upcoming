@@ -144,7 +144,6 @@ md-card[md-ink-ripple] {
   user-select: none;
 }
 
-
 .event-list.ng-enter,
 .event-list.ng-leave,
 .event-list.ng-move,
@@ -155,6 +154,18 @@ md-card[md-ink-ripple] {
   transition: 0.5s linear all;
 }
 
+.event-tile.ng-leave {
+  transition: 0;
+}
+
+.event-tile.ng-enter,
+.event-tile.ng-move {
+  transition: 1s linear all;
+}
+
+
+.event-tile.ng-enter,
+.event-tile.ng-move,
 .event-list.ng-enter,
 .event-list.ng-move,
 .event-details-container.ng-enter,
@@ -173,6 +184,12 @@ md-card[md-ink-ripple] {
   opacity: 1;
 }
 
+.event-tile.ng-enter.ng-enter-active,
+.event-tile.ng-move.ng-move-active {
+  height: 100%;
+  opacity: 1;
+}
+
 
 .ng-enter.ng-enter.ng-enter-active,
 .ng-enter.ng-move.ng-move-active {
@@ -180,12 +197,14 @@ md-card[md-ink-ripple] {
   opacity: 1;
 }
 
+.event-tile.ng-leave,
 .event-list.ng-leave,
 .event-details-container.ng-leave {
   opacity: 1;
   overflow: hidden;
 }
 
+.event-tile.ng-leave.ng-leave-active,
 .event-list.ng-leave.ng-leave-active,
 .event-details-container.ng-leave.ng-leave-active {
   height: 0;
