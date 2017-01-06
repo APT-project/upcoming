@@ -1,18 +1,18 @@
 [
   {
     "id": 0,
-    "name": "Bowling Discount",
+    "name": "Bowling 🎳 Discount",
     "venue": "",
     "description": "Bowling is where it's at! There are free alleys for tonight.",
     "category": "leisure",
-    "latitude": "61.494413",
-    "longitude": "23.762998",
-    "busstops": ["1337", "8888"],
+    "latitude": "61.497275",
+    "longitude": "23.756797",
+    "busstops": ["0", "8888"],
     "priority": 0
   },
   {
     "id": 2,
-    "name": "Burger Tuesday",
+    "name": "Burger 🍔 Tuesday",
     "venue": "Zarillo",
     "description": "The go-to place for students on Tuesdays!",
     "category": "food",
@@ -23,7 +23,7 @@
   },
   {
     "id": 3,
-    "name": "Coffee Tasting",
+    "name": "Coffee ☕ Tasting",
     "venue": "Pispalan Haulitehdas",
     "description": "Get a free coffee tasting tour!",
     "category": "food",
@@ -38,8 +38,8 @@
     "venue": "",
     "description": "Discover rich Middle Eastern tastes and get two meals for the price of one!",
     "category": "food",
-    "latitude": "61.499089",
-    "longitude": "23.778980",
+    "latitude": "61.499423",
+    "longitude": "23.779399",
     "busstops": ["9001"],
     "priority": 0
   },
@@ -49,9 +49,9 @@
     "venue": "",
     "description": "Solve the riddle in the Mystery Room to get out in time! Available for groups up to 6 people",
     "category": "leisure",
-    "latitude": "61.496158",
-    "longitude": "23.764483",
-    "busstops": ["2045"],
+    "latitude": "61.501109",
+    "longitude": "23.781286",
+    "busstops": ["1111"],
     "priority": 0
   },
   {
@@ -60,31 +60,86 @@
     "venue": "",
     "description": "Visit all the museums in Tampere for free tonight!",
     "category": "culture",
-    "latitude": "61.502935",
-    "longitude": "23.760412",
+    "latitude": "61.495804",
+    "longitude": "23.781292",
     "busstops": ["2045"],
     "priority": 0
   },
   {
     "id": 7,
     "name": "Art Gallery Open",
-    "venue": "",
+    "venue": "Ronga",
     "description": "A wide range of modern art for display at the gallery.",
     "category": "culture",
-    "latitude": "61.498406",
-    "longitude": "23.767857",
-    "busstops": ["2045"],
+    "latitude": "61.500307",
+    "longitude": "23.766796",
+    "busstops": ["1052"],
     "priority": 0
   },
   {
     "id": 8,
     "name": "Pop-up food event",
     "venue": "Xiaodong's Penthouse",
-    "description": "Free hot pot and 白酒 for all!",
+    "description": "Free hot pot 🍜 and 白酒 🍻 for all!",
     "category": "food",
     "latitude": "61.46653",
     "longitude": "23.85600",
-    "busstops": ["2045"],
+    "busstops": ["1015"],
+    "priority": 0
+  },
+  {
+    "id": 9,
+    "name": "Matti Nykänen",
+    "venue": "Kaijakka",
+    "description": "⛷🎸♫",
+    "category": "entertainment",
+    "latitude": "61.494612",
+    "longitude": "23.759527",
+    "busstops": ["819", "8008", "8135"],
+    "priority": 0
+  },
+  {
+    "id": 10,
+    "name": "Tauski Show 🎤",
+    "venue": "Kyttis Pub",
+    "description": "Tauski performs his hit song. Will he come or not, bets are on.",
+    "category": "entertainment",
+    "latitude": "61.499564",
+    "longitude": "23.770204",
+    "busstops": ["9", "11"],
+    "priority": 0
+  },
+  {
+    "id": 11,
+    "name": "❄ Ice Skating ❄",
+    "venue": "Keskustori",
+    "description": "Welcome to our magnificent ice skating rink at the heart of Tampere!",
+    "category": "sport",
+    "latitude": "61.498077",
+    "longitude": "23.760747",
+    "busstops": ["4000", "2195", "9088", "1"],
+    "priority": 0
+  },
+  {
+    "id": 12,
+    "name": "Talk by Mr. Majaniemi",
+    "venue": "SimLab Pinni B",
+    "description": "Mr. Majaniemi tells about the future in the Vision 2001 event",
+    "category": "education",
+    "latitude": "61.492626",
+    "longitude": "23.778066",
+    "busstops": ["45"],
+    "priority": 0
+  },
+  {
+    "id": 13,
+    "name": "Goat 🐐",
+    "venue": "",
+    "description": "Come pet me!",
+    "category": "leisure",
+    "latitude": "61.498267",
+    "longitude": "23.765261",
+    "busstops": [],
     "priority": 0
   }
 ]
