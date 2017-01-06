@@ -43,34 +43,25 @@
       eventSort.proximity(vm.latestLocation, vm.events);
     }
 
-    function resolveCategoryForMarkerUrl(category) {
-      var markerUrl;
-      switch(category) {
-    case 'food':
-        markerUrl = 'marker.event.food.png';
-        break;
-    case 'culture':
-        markerUrl = 'marker.event.culture.png';
-        break;
-    case 'leisure':
-        markerUrl = 'marker.event.leisure.png';
-        break;
-    default:
-        markerUrl = 'marker.event.yellow.png';
-      }
-      return markerUrl;
-    }
-
     function renderEventsOnMap(events) {
+      var eventCategoryColors = {
+        'culture': 'purple',
+        'education': 'light-blue',
+        'entertainment': 'blue',
+        'food': 'orange',
+        'leisure': 'pink',
+        'sport': 'green'
+      };
       for (var i = 0; i < events.length; ++i) {
         var event = events[i];
         var previousEvent = events[i-1] || event;
+        var categoryColor = eventCategoryColors[event.category] || 'yellow';
         var eventLoc = { lat: Number(event.latitude),
                          lng: Number(event.longitude) };
         var marker = vm.map.createMarker({
           position: eventLoc,
           title: event.name,
-          icon: 'img/icons/' + resolveCategoryForMarkerUrl(event.category)
+          icon: 'img/icons/marker.event.' + categoryColor + '.png'
         });
 
         marker.addListener('click', showEventDetails(event, eventLoc));
