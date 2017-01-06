@@ -55,7 +55,7 @@
       for (var i = 0; i < events.length; ++i) {
         var event = events[i];
         var previousEvent = events[i-1] || event;
-        var categoryColor = eventCategoryColors[event.category] || 'yellow';
+        var categoryColor = eventCategoryColors[event.category] || 'amber';
         var eventLoc = { lat: Number(event.latitude),
                          lng: Number(event.longitude) };
         var marker = vm.map.createMarker({
