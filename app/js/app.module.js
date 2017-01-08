@@ -36,15 +36,6 @@
         $rootScope.$apply(function() {
           $rootScope.window_dimensions = data;
           $rootScope.initialized = true;
-
-          // Hide some details (distance), from the left navigation event list, if
-          // the screen is small.
-          // This doesn't trigger when the view is chaged to portrait/landscape mode
-          if (data.fullscreen_width < 321) {
-            $rootScope.smallEventDetails = true;
-          } else {
-            $rootScope.smallEventDetails = false;
-          }
         });
       });
     }]);
