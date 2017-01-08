@@ -107,11 +107,12 @@
 
     function toggleEventList() {
       $mdSidenav('left').toggle();
+
       // This is just a quick hook up for the perfect-scrollbar library.
-      // You may want to disable it because it has issues with touch events
+      // And is currently disabled because it had issues with touch events
       // on mobile browsers.
-      var container = document.getElementById('sidenav');
-      Ps.initialize(container);
+      //var container = document.getElementById('sidenav');
+      //Ps.initialize(container);
 
     }
 
