@@ -39,7 +39,7 @@
   <script type="text/javascript" src="js/map/map.factory.js"></script>
   <script type="text/javascript" src="js/map/map.directive.js"></script>
 
-  
+
 
   <script type="text/javascript" src="js/lib/lib.js"></script>
 </head>
@@ -65,7 +65,7 @@
           <div class="event-title">
             <div class="name">{{ event.name }}</div>
             <div class="venue" ng-if="event.venue">@{{ event.venue }}</div>
-            <div ng-if="event.distanceToUser" class="distance description" ng-hide="smallEventDetails">{{ event.distanceToUser | distance : " km" : event.distanceToUser < 1 ? " m" : " km"}}</div>
+            <div ng-if="event.distanceToUser && ec.fullDetails" class="distance description">{{ event.distanceToUser | distance : "km" : event.distanceToUser < 1 ? "m" : "km"}}</div>
           </div>
           <p ng-if="event.description" class="description">{{ event.description}}</p>
         </md-card>

@@ -5,15 +5,20 @@
     .module('upcomingStops.event')
     .controller('EventController', EventController);
 
-  EventController.$inject = ['eventFactory', 'eventSort', '$mdSidenav', '$mdBottomSheet', '$scope', 'isDemoMode'];
+  EventController.$inject = ['eventFactory', 'eventSort', '$mdSidenav', '$mdBottomSheet', '$scope', '$rootScope', 'isDemoMode'];
 
-  function EventController(eventFactory, eventSort, $mdSidenav, $mdBottomSheet, $scope, isDemoMode) {
+  function EventController(eventFactory, eventSort, $mdSidenav, $mdBottomSheet, $scope, $rootScope, isDemoMode) {
     var vm = this;
 
     vm.events = [];
     vm.selectedEvent = null;
     vm.latestLocation = { latitude: 61.498180, longitude: 23.762195 };
     vm.dragStartListener = null;
+    if ($rootScope.window_dimensions.fullscreen_width < 321) {
+      vm.fullDetails = false;
+    } else {
+      vm.fullDetails = true;
+    }
 
     vm.renderEventsOnMap = renderEventsOnMap;
     vm.showEventDetails = showEventDetails;
@@ -130,6 +135,19 @@
         });
       });
     }
+
+    llb_app.addListener('window_dimensions', function(data) {
+      $scope.$apply(function() {
+        // Hide some details (distance), from the left navigation event list, if
+        // the screen is small.
+        // This doesn't trigger when the view is chaged to portrait/landscape mode
+        if (data.fullscreen_width < 321) {
+          vm.fullDetails = false;
+        } else {
+          vm.fullDetails = true;
+        }
+      });
+    });
 
     eventFactory
       .getEvents()
