@@ -12,7 +12,7 @@
 
     vm.events = [];
     vm.selectedEvent = null;
-    vm.latestLocation = { latitude: 61.498180, longitude: 23.762195 };
+    vm.latestLocation = { lat: 61.498180, lng: 23.762195 };
     vm.dragStartListener = null;
     if ($rootScope.window_dimensions.fullscreen_width < 321) {
       vm.fullDetails = false;
@@ -61,8 +61,8 @@
         var event = events[i];
         var previousEvent = events[i-1] || event;
         var categoryColor = eventCategoryColors[event.category] || 'amber';
-        var eventLoc = { lat: Number(event.latitude),
-                         lng: Number(event.longitude) };
+        var eventLoc = { lat: Number(event.lat),
+                         lng: Number(event.lng) };
         var marker = vm.map.createMarker({
           position: eventLoc,
           title: event.name,
@@ -90,12 +90,15 @@
         vm.map.setZoom(15);
         vm.map.panTo(eventLoc);
         openBottomSheet(event);
-      }
+      };
     }
 
     function selectEvent(event) {
       vm.selectedEvent = event;
-      var eventLoc = { lat: Number(event.latitude), lng: Number(event.longitude) }
+      var eventLoc = {
+        lat: Number(event.lat),
+        lng: Number(event.lng)
+      };
       vm.map.panTo(eventLoc);
     }
 
@@ -126,8 +129,8 @@
     else {
       llb_app.addListener('location', function(data){
         var coordinates = {
-          latitude: data.data.latitude,
-          longitude: data.data.longitude
+          lat: data.data.latitude,
+          lng: data.data.longitude
         };
         $scope.$apply(function (){
           vm.latestLocation = coordinates;
