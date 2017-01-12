@@ -29,10 +29,10 @@
     function proximity(coordinates, events) {
       for(var i = 0; i < events.length; i++) {
         events[i].distanceToUser =
-          getDistanceFromLatLonInKm(Number(events[i].latitude),
-                                    Number(events[i].longitude),
-                                    Number(coordinates.latitude),
-                                    Number(coordinates.longitude));
+          getDistanceFromLatLonInKm(Number(events[i].lat),
+                                    Number(events[i].lng),
+                                    Number(coordinates.lat),
+                                    Number(coordinates.lng));
       }
     };
 
