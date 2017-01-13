@@ -6,6 +6,7 @@ html, body, iframe {
   text-shadow: 2px 0 6px rgba(255, 255, 255, 0.1);
 }
 
+/* md-card requires this to have a ripple effect */
 md-card[md-ink-ripple] {
   position: relative;
 }
@@ -226,6 +227,3 @@ md-card[md-ink-ripple] {
 #map {
 
 }
-
-
-

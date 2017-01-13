@@ -1,3 +1,5 @@
+// There are too many things in here. Some would be better elsewhere and
+// some should be refactored to their own components.
 (function() {
   'use strict';
 
@@ -14,6 +16,7 @@
     vm.selectedEvent = null;
     vm.latestLocation = { lat: 61.498180, lng: 23.762195 };
     vm.dragStartListener = null;
+    // Tried to do this with $mdMedia but it didn't work
     if ($rootScope.window_dimensions.fullscreen_width < 321) {
       vm.fullDetails = false;
     } else {
@@ -104,20 +107,22 @@
 
     function toggleEventList() {
       $mdSidenav('left').toggle();
-
+      // This is just a quick hook up for the perfect-scrollbar library.
+      // You may want to disable it because it has issues with touch events
+      // on mobile browsers.
       var container = document.getElementById('sidenav');
       Ps.initialize(container);
 
     }
 
     function openBottomSheet(event) {
+      // This should definitely be in it's own controller.
+      // Was left lingering waiting for a complete UI rewrite
+      // which was postponed indefinitely until time ran out.
       $mdBottomSheet.show({
         templateUrl: 'js/event/event-details.template.html',
-        /* Wish I could just pass the parameter 'event' to the controller instead of referencing EventController's scope here. Waiting for someone to show me how to do it. Until then using this way.*/
         controller: function($scope) {this.event = vm.selectedEvent},
-        //controller: function(event) {this.event = event},
         controllerAs: 'bs',
-        //locals: event
       });
     }
 
@@ -141,9 +146,9 @@
 
     llb_app.addListener('window_dimensions', function(data) {
       $scope.$apply(function() {
-        // Hide some details (distance), from the left navigation event list, if
-        // the screen is small.
-        // This doesn't trigger when the view is chaged to portrait/landscape mode
+        // Hide some details (distance), from the left navigation event list
+        // if the screen is small. This doesn't trigger when the view is chaged
+        // to portrait/landscape mode. Tried to do this with $mdMedia, no dice.
         if (data.fullscreen_width < 321) {
           vm.fullDetails = false;
         } else {

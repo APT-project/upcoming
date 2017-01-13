@@ -24,6 +24,10 @@
           });
         } else {
           $rootScope.$apply(function() {
+            // Why is the bottom sheet handled here? git blame to see that it
+            // "fixed" a bug where the BS remained open even in tile mode after
+            // clicking LLB back button. In hindsight, this could be handled
+            // better, or at least somewhere else than here.
             $mdBottomSheet.cancel();
             $rootScope.fullscreen = false;
           });
@@ -43,6 +47,9 @@
 
     function configureApp(GoogleMapsApiProvider) {
       GoogleMapsApiProvider.setConfig({
+        // Enter your own Google Maps API key here. This will probably
+        // be revoked soon and the app won't have a map. We did not have time
+        // to integrate build tools to handle this better.
         apiKey: 'AIzaSyBevZCT08ZBaZV6t4ZF_sBKncJg7kecZ94'
       });
     }
